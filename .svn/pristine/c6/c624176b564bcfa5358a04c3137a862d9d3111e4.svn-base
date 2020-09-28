@@ -1,0 +1,418 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlcandidato",
+        "designer|userClassName": "pnlCandidato",
+        "layout": "fit",
+        "title": "Candidatos"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel14",
+    "designerId": "ac8a4f14-ad25-4a6c-abf1-753037431ff3",
+    "viewControllerInstanceId": "f833603e-5d7e-4474-a018-055aee80e2c5",
+    "viewModelInstanceId": "1bd26333-c166-4361-b01b-d5c0e8d95ee0",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "00711cd1-677f-4f2d-8198-6220b961b528",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-plus",
+                        "id": "btnNuevoCandidato",
+                        "layout|flex": null,
+                        "text": "Nuevo"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "a043c1c4-3ad8-490d-a483-a53e6826fd87",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnNuevoCandidatoClick",
+                                "implHandler": [
+                                    "var win = Ext.create('voto.view.wndCandidato');",
+                                    "win.show();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnNuevoCandidatoClick",
+                            "designerId": "cd5fdc01-b81b-4753-b3a0-7dd787890778"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-trash",
+                        "id": "btnEliminarCandidato",
+                        "layout|flex": null,
+                        "text": "Eliminar"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "ba74fc26-9a26-4ec7-b040-a3770d3e3c74",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnEliminarCandidatoClick",
+                                "implHandler": [
+                                    "var g = Ext.getCmp('grdCandidato');",
+                                    "var arrayKeys = g.getSelectionModel().selected.items;",
+                                    "var indice = g.getSelectionModel().selectionStartIdx;",
+                                    "if(arrayKeys.length === 0)",
+                                    "    Ext.Msg.alert('Error', 'Debe escoger un candidato');",
+                                    "else",
+                                    "{",
+                                    "    var store = g.getStore();",
+                                    "    var rec = g.selection;",
+                                    "    Ext.Ajax.request({",
+                                    "        url: '../servidor/voto/candidato/verificavoto',",
+                                    "        method:\"post\",",
+                                    "        params: {",
+                                    "            id: rec.data.id",
+                                    "        },",
+                                    "        success: function( result, request ) {",
+                                    "            var responseData = Ext.JSON.decode(result.responseText);",
+                                    "            if(responseData.success)",
+                                    "            {",
+                                    "",
+                                    "                store.remove(rec);",
+                                    "                store.sync(",
+                                    "                    {",
+                                    "                        params:{",
+                                    "                            id: rec.data.id",
+                                    "                        },",
+                                    "                        success: function(batch, success)",
+                                    "                        {",
+                                    "                            store.commitChanges();",
+                                    "                            store.load();",
+                                    "                            Ext.Msg.alert('Alerta', 'Se ha eliminado el registro exitosamente');",
+                                    "                        },",
+                                    "",
+                                    "                        failure: function(batch, success)",
+                                    "                        {",
+                                    "                            Ext.Msg.alert('Error', 'Hubor un error');",
+                                    "                        }",
+                                    "                    });",
+                                    "            }",
+                                    "            else",
+                                    "            {",
+                                    "                Ext.Msg.alert('Alerta','Este registro tiene votos asociados.');",
+                                    "            }",
+                                    "        },",
+                                    "",
+                                    "        failure: function(response, opts) {",
+                                    "            console.log('server-side failure with status code ' + response.status);",
+                                    "        }",
+                                    "    });",
+                                    "",
+                                    "}"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnEliminarCandidatoClick",
+                            "designerId": "8e97b0ca-30fe-4105-a037-a90e035884b0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "id": "grdCandidato",
+                "store": "Candidato"
+            },
+            "configAlternates": {
+                "forceFit": "boolean",
+                "id": "string",
+                "store": "store"
+            },
+            "name": "MyGridPanel",
+            "designerId": "5ef2438e-c294-4b95-82a5-47e6f4060750",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable",
+                    "designerId": "829237f8-f2dd-4b0c-ace2-479da8a1bd3a",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTableItemDblClick",
+                                "implHandler": [
+                                    "var grid = Ext.getCmp('grdCandidato');",
+                                    "var arrayKeys = grid.getSelectionModel().selected.items;",
+                                    "var indice = grid.getSelectionModel().selectionStartIdx;",
+                                    "ID = arrayKeys[0].data.id;",
+                                    "var win = Ext.create('voto.view.wndCandidatoM');",
+                                    "win.show();",
+                                    "Ext.getCmp('txtNombreCM').setValue(arrayKeys[0].data.nombre);",
+                                    "console.log(arrayKeys[0].data.id_tipo_candidato);",
+                                    "Ext.getCmp('cbTipoCandidatoM').setValue(arrayKeys[0].data.id_candidato);",
+                                    "URL = '<div style=\"display: flex; justify-content: center;\"><img src=\"';",
+                                    "URL = URL.concat(arrayKeys[0].data.foto);",
+                                    "arr =arrayKeys[0].data.foto.split('/');",
+                                    "x = arr[3];",
+                                    "URL = URL.concat('\" height = \"124\"></div>');",
+                                    "Ext.getCmp('id_panel_foto1').setHtml(URL);",
+                                    ""
+                                ],
+                                "name": "itemdblclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "onTableItemDblClick",
+                            "designerId": "b2e6b193-4626-412e-aee7-4b52d2f34072"
+                        }
+                    ]
+                },
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGrdCandidatoAfterRender",
+                        "implHandler": [
+                            "var store = Ext.getCmp('grdCandidato').getStore();",
+                            "store.proxy.extraParams = {",
+                            "    busqueda: 1",
+                            "};",
+                            "store.removeAll();",
+                            "store.load();"
+                        ],
+                        "name": "afterrender",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "onGrdCandidatoAfterRender",
+                    "designerId": "01169115-0e94-4dab-9501-fdd7477eef2d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Nombre"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "2d124608-943a-46d4-9785-bff6ca88c284",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyTextField4",
+                            "designerId": "a7487af3-5091-406d-a690-55cda387eecc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "id_tipo_candidato",
+                        "text": "Tipo Candidato"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyColumn3",
+                    "designerId": "5e0dfffa-5c7b-4f0b-97f2-45c9d13896c3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "name": "MyComboBox1",
+                            "designerId": "548472ab-dc7c-4910-acd3-d1eba0d55a0a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "id",
+                        "hidden": true,
+                        "text": "id"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string",
+                        "hidden": "boolean"
+                    },
+                    "name": "MyColumn9",
+                    "designerId": "dbc3722c-15e9-4fdb-ace0-1bc441f35abd"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "foto",
+                        "hidden": true,
+                        "text": "foto"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn10",
+                    "designerId": "e87bb05e-307d-4eae-b754-f83cc45e8cb3"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "id_candidato",
+                        "hidden": true,
+                        "text": "MyColumn11"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn11",
+                    "designerId": "9559dbf5-74a5-487e-82a3-d121a8870a09"
+                }
+            ]
+        }
+    ]
+}

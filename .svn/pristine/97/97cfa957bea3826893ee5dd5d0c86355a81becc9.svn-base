@@ -1,0 +1,232 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlcorreos",
+        "designer|userClassName": "pnlCorreos",
+        "title": "Correos"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyPanel17",
+    "designerId": "552b2adf-7261-4090-bde6-f82291c5675f",
+    "viewControllerInstanceId": "56311a02-8686-4518-9773-cf08b97dd0ea",
+    "viewModelInstanceId": "7e0ff024-d60f-492a-bbaa-de41ecf34ca2",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "bottom",
+                "container|pack": "center",
+                "height": 130,
+                "layout": "hbox"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "container|pack": "string",
+                "height": "auto",
+                "layout": "string"
+            },
+            "name": "MyPanel17",
+            "designerId": "3136e0d5-a077-4f85-a7a9-75832dce51eb",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fieldLabel": "Pendientes",
+                        "id": "id_pendientes_correos",
+                        "labelWidth": 75
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "labelWidth": "number",
+                        "id": "string"
+                    },
+                    "name": "MyDisplayField1",
+                    "designerId": "0e8a2ec4-9462-4f69-b511-e73709a30e85"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "id": "id_correos",
+                        "margin": "7 0 0 10",
+                        "text": "Enviar correos"
+                    },
+                    "configAlternates": {
+                        "disabled": "boolean",
+                        "id": "string",
+                        "margin": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton7",
+                    "designerId": "0d58256b-5ddf-4a87-8e92-d4940ab7aaba",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onId_correosClick",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "    url: '../servidor/voto/votante/enviar',",
+                                    "    method:\"post\",",
+                                    "    success: function( result, request ) {",
+                                    "        Ext.Msg.alert('Correos enviados','Se han enviado lo correos, verificar si no existen correos pendientes');",
+                                    "        Ext.Ajax.request({",
+                                    "            url: '../servidor/voto/estudiante/correospendientes',",
+                                    "            method:\"post\",",
+                                    "            success: function( result, request ) {",
+                                    "                var obj = Ext.JSON.decode(result.responseText);",
+                                    "                Ext.getCmp('id_pendientes_correos').setValue(obj.data);",
+                                    "                if(obj.data>0)",
+                                    "                {",
+                                    "                    Ext.getCmp('id_correos').setDisabled(false);",
+                                    "                    Ext.getCmp('id_aviso_correo').setText('');",
+                                    "                }",
+                                    "                else{",
+                                    "                    Ext.getCmp('id_correos').setDisabled(true);",
+                                    "                    Ext.getCmp('id_aviso_correo').setText('No existen correos pendientes por enviar.');",
+                                    "",
+                                    "                }",
+                                    "            },",
+                                    "",
+                                    "            failure: function(response, opts) {",
+                                    "                console.log('server-side failure with status code ' + response.status);",
+                                    "            }",
+                                    "        });",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "    failure: function(response, opts) {",
+                                    "        console.log('server-side failure with status code ' + response.status);",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onId_correosClick",
+                            "designerId": "bce17f09-9d85-4b43-ab91-fa9aef2b2a34"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 37,
+                "layout": "center"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "layout": "string"
+            },
+            "name": "MyPanel18",
+            "designerId": "8e26483a-91b1-49c2-a60f-f1313b86755a",
+            "cn": [
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "id_aviso_correo",
+                        "margin": "10 0 0 0"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "margin": "auto"
+                    },
+                    "name": "MyLabel5",
+                    "designerId": "8154d8c3-669c-4bad-833f-c7431fae2c7c"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAfterRender",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "    url: '../servidor/voto/votante/correospendientes',",
+                    "    method:\"post\",",
+                    "    success: function( result, request ) {",
+                    "        var obj = Ext.JSON.decode(result.responseText);",
+                    "        Ext.getCmp('id_pendientes_correos').setValue(obj.data);",
+                    "        if(obj.data>0)",
+                    "        {",
+                    "            Ext.getCmp('id_correos').setDisabled(false);",
+                    "            Ext.getCmp('id_aviso_correo').setText('');",
+                    "        }",
+                    "        else{",
+                    "            Ext.getCmp('id_correos').setDisabled(true);",
+                    "            Ext.getCmp('id_aviso_correo').setText('No existen correos pendientes por enviar.');",
+                    "",
+                    "        }",
+                    "    },",
+                    "",
+                    "    failure: function(response, opts) {",
+                    "        console.log('server-side failure with status code ' + response.status);",
+                    "    }",
+                    "});"
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "name": "string",
+                "scope": "string",
+                "implHandler": "code"
+            },
+            "name": "onPanelAfterRender",
+            "designerId": "2e64cbaa-1e4a-40d1-b6a0-d255fad9b036"
+        }
+    ]
+}

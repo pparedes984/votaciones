@@ -1,0 +1,358 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wndtipocandidato",
+        "designer|userClassName": "wndTipoCandidato",
+        "height": 250,
+        "id": "wndTipoCandidato",
+        "title": "Nuevo Tipo Candidato",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "dc786d89-df35-4ba6-bbde-7e1d8f589b6f",
+    "viewControllerInstanceId": "f28b8dfb-f164-48a8-908c-9c9bc83091b3",
+    "viewModelInstanceId": "66835663-1a25-4641-a083-ad49ae6e266c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "center",
+                "id": "frmTipoCandidato",
+                "layout": "vbox"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|align": "string",
+                "id": "string",
+                "layout": "string"
+            },
+            "name": "MyForm1",
+            "designerId": "c310f06d-f430-4f6c-8ea5-327ae7bcc059",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Descripcion",
+                        "id": "txtDescripcionTC",
+                        "name": "descripcion"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "id": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTextField10",
+                    "designerId": "52f5a609-7406-499f-9de2-6cb281076cb7",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtUsuarioNFocusleave1",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "    url: '../servidor/voto/tipocandidato/verificar',",
+                                    "    method:\"post\",",
+                                    "    params: {",
+                                    "        nombre: Ext.getCmp('txtDescripcionTC').getValue(),",
+                                    "",
+                                    "    },",
+                                    "    success: function( result, request ) {",
+                                    "        var responseData = Ext.JSON.decode(result.responseText);",
+                                    "        if(responseData.failure){",
+                                    "            Ext.Msg.alert('Error','El tipo de candidato ya existe');",
+                                    "            Ext.getCmp('txtDescripcionTC').setValue('');",
+                                    "            Ext.getCmp('txtDescripcionTC').reset();",
+                                    "        }",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "    failure: function(response, opts) {",
+                                    "",
+                                    "        console.log('server-side failure with status code ' + response.status);",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "focusleave",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtUsuarioNFocusleave1",
+                            "designerId": "88bffcbc-1b55-41d0-bf6f-4929fd0dd3c0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Nro. Votos",
+                        "id": "txtVotosTC",
+                        "minValue": 1,
+                        "name": "votos"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "id": "string",
+                        "name": "string",
+                        "minValue": "number"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "be9708b3-fa61-4bda-86cf-0d085a73129e"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Orden",
+                        "id": "txtOrdenTC",
+                        "minValue": 1,
+                        "name": "orden"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "id": "string",
+                        "name": "string",
+                        "minValue": "number"
+                    },
+                    "name": "MyNumberField1",
+                    "designerId": "0df40ecf-eb14-4336-806b-2b69c9ecc6d9"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "7c868bb1-d553-4273-b25a-3036e275e2c1",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill4",
+                            "designerId": "692df1f2-c8cf-4413-980a-09fa509aa740"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnCrearTC",
+                                "layout|flex": null,
+                                "text": "Crear"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton20",
+                            "designerId": "8f187acc-8157-425b-add3-d7b0bafd7016",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCrearTCClick",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "var forma = Ext.getCmp('frmTipoCandidato').getForm(),",
+                                            "    store = Ext.getStore('TipoCandidato');",
+                                            "if(forma.isValid())",
+                                            "{",
+                                            "    var values = forma.getValues();",
+                                            "",
+                                            "    Ext.Ajax.request({",
+                                            "        url: '../servidor/voto/tipocandidato/create',",
+                                            "        method:\"post\",",
+                                            "        params: {",
+                                            "            data: Ext.encode(values)",
+                                            "",
+                                            "        },",
+                                            "        success: function( result, request ) {",
+                                            "            var responseData = Ext.JSON.decode(result.responseText);",
+                                            "            if(responseData.success){",
+                                            "                Ext.Msg.alert('Alerta','El tipo de candidato ha sido creado satisfactoriamente');",
+                                            "                Ext.getCmp('frmTipoCandidato').reset();",
+                                            "                var store = Ext.getCmp('grdTipoCandidato').getStore();",
+                                            "",
+                                            "                store.removeAll();",
+                                            "                store.load();",
+                                            "                Ext.getCmp('wndTipoCandidato').close();",
+                                            "                ",
+                                            "                ",
+                                            "            }",
+                                            "            else{",
+                                            "                Ext.Msg.alert('Error','No se ha podido ingresar el tipo de candidato');",
+                                            "            }",
+                                            "",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "",
+                                            "            console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "}",
+                                            "else",
+                                            "    Ext.Msg.alert('Advertencia','Debe llenar todos los campos');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCrearTCClick",
+                                    "designerId": "c694fa22-c102-456d-8892-d920662e7af1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnSalirTC",
+                                "layout|flex": null,
+                                "text": "Atrás"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "6f4900cf-b8c2-4228-b20a-ce4ca8e0f7f8",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSalirTCClick",
+                                        "implHandler": [
+                                            "Ext.getCmp('wndTipoCandidato').close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSalirTCClick",
+                                    "designerId": "9f585628-c5f2-4359-a66c-82d84bff8a53"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill5",
+                            "designerId": "1cba5e9c-300a-405c-9f20-2e25624cf38d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

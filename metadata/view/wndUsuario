@@ -1,0 +1,366 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wndusuario",
+        "designer|userClassName": "wndUsuario",
+        "height": 250,
+        "id": "wndUsuario",
+        "layout": "center",
+        "title": "Nuevo Usuario",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "b5f9c506-529a-4245-bae7-81dcad807dba",
+    "viewControllerInstanceId": "2869029d-f24f-4b9d-8e7d-a0272a25a51b",
+    "viewModelInstanceId": "7739efab-df5e-4f79-bc51-5e27d357c528",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "center",
+                "id": "frmUsuario",
+                "layout": "vbox"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|align": "string",
+                "id": "string",
+                "layout": "string"
+            },
+            "name": "MyForm4",
+            "designerId": "3877745b-1e9b-48d5-9ab4-6ecd162604ed",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Usuario",
+                        "id": "txtUsuarioN",
+                        "name": "usuario"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "id": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTextField10",
+                    "designerId": "8d9448ce-220d-49c5-a1c3-37a72f47e72b",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtUsuarioNFocusleave",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "    url: '../servidor/voto/usuariosistema/verificar',",
+                                    "    method:\"post\",",
+                                    "    params: {",
+                                    "        usuario: Ext.getCmp('txtUsuarioN').getValue(),",
+                                    "",
+                                    "    },",
+                                    "    success: function( result, request ) {",
+                                    "        var responseData = Ext.JSON.decode(result.responseText);",
+                                    "        console.log(responseData);",
+                                    "        if(responseData.failure){",
+                                    "            Ext.Msg.alert('Error','El usuario ya existe');",
+                                    "            Ext.getCmp('txtUsuarioN').setValue('');",
+                                    "            Ext.getCmp('txtUsuarioN').reset();",
+                                    "            ",
+                                    "        }",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "    failure: function(response, opts) {",
+                                    "",
+                                    "        console.log('server-side failure with status code ' + response.status);",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "focusleave",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtUsuarioNFocusleave",
+                            "designerId": "4bc071f7-2594-4824-a5db-74aa2b66090b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Nombre",
+                        "id": "txtNombreUs",
+                        "name": "nombre"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "id": "string",
+                        "name": "string"
+                    },
+                    "name": "MyTextField11",
+                    "designerId": "46b79f84-5986-42c1-ad01-93e065d458c7"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "autoLoadOnValue": true,
+                        "displayField": "descripcion",
+                        "editable": false,
+                        "fieldLabel": "Rol",
+                        "id": "cbRolUsuario",
+                        "name": "id_rol",
+                        "store": "Rol",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "layout|flex": "number",
+                        "allowBlank": "boolean",
+                        "autoLoadOnValue": "boolean",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "id": "string",
+                        "name": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox3",
+                    "designerId": "0a0c6211-d07b-4955-91e9-32fe7de94db4"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "dock": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyToolbar6",
+                    "designerId": "40a3cf55-10ff-40c5-a9d8-479800be0645",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill4",
+                            "designerId": "5863fa49-f0b8-47f7-8646-61212bd28142"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnCrearUs",
+                                "layout|flex": null,
+                                "text": "Crear"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton20",
+                            "designerId": "03953716-ee54-4bed-b320-320a6fe470c7",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnCrearUsClick",
+                                        "implHandler": [
+                                            "var me = this;",
+                                            "var forma = Ext.getCmp('frmUsuario').getForm(),",
+                                            "    store = Ext.getStore('UsuarioSistema');",
+                                            "if(forma.isValid())",
+                                            "{",
+                                            "    var values = forma.getValues();",
+                                            "",
+                                            "    Ext.Ajax.request({",
+                                            "        url: '../servidor/voto/usuariosistema/add',",
+                                            "        method:\"post\",",
+                                            "        params: {",
+                                            "            data: Ext.encode(values)",
+                                            "",
+                                            "        },",
+                                            "        success: function( result, request ) {",
+                                            "            var responseData = Ext.JSON.decode(result.responseText);",
+                                            "            if(responseData.success){",
+                                            "                Ext.Msg.alert('Alerta','El usuario ha sido creado satisfactoriamente');",
+                                            "                Ext.getCmp('frmUsuario').reset();",
+                                            "                Ext.getCmp('wndUsuario').close();",
+                                            "                var store = Ext.getCmp('grdUsuarioSistema').getStore();",
+                                            "",
+                                            "                store.removeAll();",
+                                            "                store.load();",
+                                            "            }",
+                                            "            else{",
+                                            "                Ext.Msg.alert('Error','No se ha podido ingresar el usuario');",
+                                            "            }",
+                                            "",
+                                            "        },",
+                                            "",
+                                            "        failure: function(response, opts) {",
+                                            "",
+                                            "            console.log('server-side failure with status code ' + response.status);",
+                                            "        }",
+                                            "    });",
+                                            "}",
+                                            "else",
+                                            "    Ext.Msg.alert('Advertencia','Debe llenar todos los campos');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnCrearUsClick",
+                                    "designerId": "cd08cf9b-62ab-4e07-ab2e-347179005b0a"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "btnSalirUs",
+                                "layout|flex": null,
+                                "text": "Atrás"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton21",
+                            "designerId": "47612e07-ae74-45b4-966a-f45d4c572698",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSalirUsClick",
+                                        "implHandler": [
+                                            "Ext.getCmp('wndUsuario').close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSalirUsClick",
+                                    "designerId": "e89c0517-2899-4b06-acec-67d0658ad7e9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyFill5",
+                            "designerId": "e65f8a32-8e5b-474f-9331-6fe9bdba7187"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

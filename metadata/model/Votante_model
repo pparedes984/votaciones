@@ -1,0 +1,164 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Votante_model"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "8871f01e-6e79-4c96-8ec3-397cdb3280b4",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cedula"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString6",
+            "designerId": "52389db7-48e9-4540-9eed-9421613e102e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombres"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString7",
+            "designerId": "3afcb83b-f12f-4f74-96d3-2b32f8b9e6df"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "asociacion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString8",
+            "designerId": "aeff5dcd-550c-44a2-ab9e-57c5cdfa6eb4"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString9",
+            "designerId": "afe15872-fc32-487c-ab45-993af657d6d5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "clave"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString10",
+            "designerId": "0190601a-aa31-4089-80c7-2399b89cfe63"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "correo_enviado"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean",
+            "designerId": "a4f4b033-9d70-45e6-a1f0-b244f280606e"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "papeleta"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean1",
+            "designerId": "04331b9e-7b4b-4e6d-8a66-4e088f2d70e2"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "Y-m-d",
+                "name": "fecha_creado"
+            },
+            "configAlternates": {
+                "dateFormat": "string",
+                "name": "string"
+            },
+            "name": "MyDate",
+            "designerId": "3f5b9133-141b-4a47-9b86-9f702d8ba35f"
+        },
+        {
+            "type": "Ext.data.field.Boolean",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "estado"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyBoolean2",
+            "designerId": "7cdf8be3-fc4e-4b16-aa02-366a67a44f53"
+        }
+    ]
+}

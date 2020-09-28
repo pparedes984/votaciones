@@ -1,0 +1,297 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlnuevo",
+        "designer|userClassName": "pnlNuevo",
+        "height": 284,
+        "layout": "fit",
+        "title": "Nuevo Votante",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyPanel14",
+    "designerId": "e84f366f-2b6f-4dc3-8955-c94887e6381b",
+    "viewControllerInstanceId": "927c030e-36b4-41b7-836d-5376fa353c5d",
+    "viewModelInstanceId": "3de68678-8133-4e74-999b-16c7715c596b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "id": "frmVotante",
+                "layout": "vbox",
+                "margin": "10 0 0 0"
+            },
+            "configAlternates": {
+                "container|align": "string",
+                "id": "string",
+                "layout": "string",
+                "margin": "auto"
+            },
+            "name": "MyForm2",
+            "designerId": "a39394d0-0c3b-4fc0-b6df-312e9447bd30",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Cédula / Pasaporte",
+                        "id": "id_cedula",
+                        "labelWidth": 70,
+                        "name": "cedula",
+                        "width": 280
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField6",
+                    "designerId": "2fb5f59a-a87d-4480-9c76-7d9b98c4021d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onId_cedulaFocusleave",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "    url: '../servidor/voto/votante/verificar',",
+                                    "    method:\"post\",",
+                                    "    params: {",
+                                    "        cedula: Ext.getCmp('id_cedula').getValue(),",
+                                    "",
+                                    "    },",
+                                    "    success: function( result, request ) {",
+                                    "        var responseData = Ext.JSON.decode(result.responseText);",
+                                    "        if(responseData.success){",
+                                    "            Ext.Msg.alert('Error','El votante ya existe');",
+                                    "            Ext.getCmp('id_cedula').setValue('');",
+                                    "            Ext.getCmp('id_cedula').reset();",
+                                    "        }",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "    failure: function(response, opts) {",
+                                    "",
+                                    "        console.log('server-side failure with status code ' + response.status);",
+                                    "    }",
+                                    "});",
+                                    ""
+                                ],
+                                "name": "focusleave",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onId_cedulaFocusleave",
+                            "designerId": "ab509a1c-6557-4b28-ab94-1c0303f0e9be"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Nombres",
+                        "id": "id_nombres",
+                        "labelWidth": 70,
+                        "maskRe": "/[a-zA-Z\\s]/",
+                        "name": "nombres",
+                        "width": 280
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "labelWidth": "number",
+                        "maskRe": "regex",
+                        "name": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField7",
+                    "designerId": "aaa6012d-f2dd-4477-bc78-d80db23be954"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Email",
+                        "id": "id_email",
+                        "labelWidth": 70,
+                        "name": "email",
+                        "vtype": "email",
+                        "width": 280
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "vtype": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyTextField8",
+                    "designerId": "512f7779-5cac-4222-bdb2-426a295a5d2a"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "displayField": "facultad",
+                        "editable": false,
+                        "fieldLabel": "Facultad",
+                        "id": "id_facultad",
+                        "labelWidth": 70,
+                        "name": "facultad",
+                        "queryMode": "local",
+                        "store": "Facultad",
+                        "valueField": "facultad",
+                        "width": 280
+                    },
+                    "configAlternates": {
+                        "fieldLabel": "string",
+                        "allowBlank": "boolean",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "id": "string",
+                        "labelWidth": "number",
+                        "name": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "width": "auto"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "aed7ddd6-9f78-4de0-89bf-819cc3aacd3f"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnGuardarV",
+                        "text": "Guardar"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton16",
+                    "designerId": "834e62c8-ed98-49a2-a37c-9e7786fdff46",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnGuardarVClick",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "var forma = Ext.getCmp('frmVotante').getForm(),",
+                                    "    store = Ext.getStore('Votantes');",
+                                    "if(forma.isValid())",
+                                    "{",
+                                    "    var values = forma.getValues();",
+                                    "",
+                                    "    Ext.Ajax.request({",
+                                    "        url: '../servidor/voto/votante/create',",
+                                    "        method:\"post\",",
+                                    "        params: {",
+                                    "            data: Ext.encode(values)",
+                                    "",
+                                    "        },",
+                                    "        success: function( result, request ) {",
+                                    "            var responseData = Ext.JSON.decode(result.responseText);",
+                                    "            if(responseData.success){",
+                                    "                Ext.Msg.alert('Alerta','El estudiante ha sido creado satisfactoriamente');",
+                                    "                Ext.getCmp('frmVotante').reset();",
+                                    "            }",
+                                    "            else{",
+                                    "                Ext.Msg.alert('Error','No se ha podido ingresar el usuario');",
+                                    "            }",
+                                    "",
+                                    "        },",
+                                    "",
+                                    "        failure: function(response, opts) {",
+                                    "",
+                                    "            console.log('server-side failure with status code ' + response.status);",
+                                    "        }",
+                                    "    });",
+                                    "}",
+                                    "else",
+                                    "    Ext.Msg.alert('Advertencia','Debe llenar todos los campos');"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnGuardarVClick",
+                            "designerId": "c4ca1d92-ed7b-48cc-b07d-07be2f251062"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

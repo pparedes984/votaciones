@@ -1,0 +1,116 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Voto_model"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "88d4468d-f682-4559-b499-69fc42549315",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger7",
+            "designerId": "dc21ade6-f5b2-46e2-b511-95822e5bbadc"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id_candidato"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger8",
+            "designerId": "4bdd34ad-26bd-4bc1-8253-13658a191ed1"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cedula_votante"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString13",
+            "designerId": "efbbd402-48e0-4493-b7eb-8b070e0e6532"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id_usuario_sistema"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString14",
+            "designerId": "d1757982-2d95-452c-83aa-5b348f827115"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ip"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString15",
+            "designerId": "281fab7c-bbbb-40ff-8f94-3a5149854c4c"
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "Y-m-d",
+                "name": "fecha"
+            },
+            "configAlternates": {
+                "dateFormat": "string",
+                "name": "string"
+            },
+            "name": "MyDate1",
+            "designerId": "19a5d6de-2a34-4183-a3d2-291b01f24e49"
+        }
+    ]
+}

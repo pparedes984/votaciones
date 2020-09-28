@@ -1,0 +1,26 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vwprtprincipal",
+        "designer|userClassName": "vwprtPrincipal",
+        "height": 250,
+        "layout": "border",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport1",
+    "designerId": "3ad21ad4-0f6a-4f80-b2a7-cf9e592165d0",
+    "viewControllerInstanceId": "0e72042c-5b55-4f2b-b43a-3abb2115e6e9",
+    "viewModelInstanceId": "f4103de0-30e9-437f-882b-fb4a358e24ad"
+}

@@ -1,0 +1,260 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vwprtadministracion",
+        "designer|userClassName": "vwprtAdministracion",
+        "height": 250,
+        "html": "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">",
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "html": "string",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "a146d673-fc93-4cf3-aa4e-88a18b0324e3",
+    "viewControllerInstanceId": "a0625eab-4f0f-4ae7-bc3d-980ebfdc20a9",
+    "viewModelInstanceId": "0777eeca-5e3d-4fa0-a2ff-70cee7655378",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": "0 50 0 50",
+                "bodyStyle": "background-color : #666666",
+                "layout": "border"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "bodyStyle": "string",
+                "layout": "string"
+            },
+            "name": "MyPanel6",
+            "designerId": "b9d762da-a5c4-4887-b15d-77a42168d304",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 90,
+                        "html": "<left><img src=\"../servidor/img/tu-voz-dos.jpg\"></left>",
+                        "layout|region": "north"
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "html": "string",
+                        "layout|region": "string"
+                    },
+                    "name": "MyPanel7",
+                    "designerId": "aa8c0766-1c74-4456-8750-c0affd46fc2e"
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "PanelCentralAdministracion",
+                        "layout": "border",
+                        "layout|region": "center"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "layout": "string",
+                        "layout|region": "string"
+                    },
+                    "name": "MyPanel8",
+                    "designerId": "f42aae61-c27f-4c48-be5c-04fb537c00f8",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pnlCentral",
+                                "layout": "fit",
+                                "layout|region": "center"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout": "string",
+                                "layout|region": "string"
+                            },
+                            "name": "MyPanel9",
+                            "designerId": "45c25d4c-0435-4aad-8c29-0f3b70def330"
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "iconAlign": "right",
+                                "layout": "hbox",
+                                "layout|region": "west",
+                                "width": 155
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "iconAlign": "string",
+                                "layout": "string",
+                                "layout|region": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyPanel10",
+                            "designerId": "de90efe8-015c-4baf-ba3a-40fc8e465217",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "border": false,
+                                        "floating": false,
+                                        "padding": 10,
+                                        "plain": true,
+                                        "width": 167
+                                    },
+                                    "configAlternates": {
+                                        "border": "boolean",
+                                        "floating": "boolean",
+                                        "padding": "auto",
+                                        "plain": "boolean",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyMenu",
+                                    "designerId": "385ead3b-ae21-4960-a72e-585f05e8d9c8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Menu Item"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem",
+                                            "designerId": "6829add0-ead0-49cd-ac41-eef790b37623"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Menu Item"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem1",
+                                            "designerId": "189fb3ca-b325-41f0-ac8e-08cc7ac5b702"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Menu Item"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem2",
+                                            "designerId": "183a6784-5ac4-4b6d-8edc-3a6923911056"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyStyle": "background-color: #6e94d1",
+                                "dock": "bottom",
+                                "layout": "fit",
+                                "maxHeight": 45
+                            },
+                            "configAlternates": {
+                                "bodyStyle": "string",
+                                "dock": "string",
+                                "layout": "string",
+                                "maxHeight": "number"
+                            },
+                            "name": "MyPanel11",
+                            "designerId": "446126e8-6a37-4592-9374-00db02c80120",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "displayusuario1",
+                                        "margin": "15 0 0 20",
+                                        "style": "color: white"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "margin": "auto",
+                                        "style": "string"
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "0ba12b69-9fb7-4533-a2a3-07ba36e97e6d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Candidato_model",
+            "UsuarioSistema_model",
+            "TipoCandidato_model",
+            "Rol_model",
+            "Votante_model",
+            "UsuarioRol_model",
+            "Voto_model"
+        ],
+        "name": "voto",
+        "stores": [
+            "Candidato",
+            "Facultad",
+            "Votantes",
+            "TipoCandidato",
+            "Rol",
+            "UsuarioSistema",
+            "UsuarioRol",
+            "Voto"
+        ],
+        "views": [
+            "vwprtAdministracion",
+            "vwprtPrincipal",
+            "vwprtLoginVotos",
+            "vwprtLogin",
+            "pnlProceso",
+            "pnlCandidato",
+            "pnlClaves",
+            "pnlCorreos",
+            "pnlCarga",
+            "pnlUsuarioSistema",
+            "pnlTipoCandidato",
+            "pnlVotante",
+            "pnlNuevo",
+            "wndCandidato",
+            "wndUsuario"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray",
+        "models": "typedarray",
+        "stores": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "Ext.Ajax.request(",
+                    "    {",
+                    "        url: '../servidor/login/sesiones',",
+                    "        method: 'post',",
+                    "        scope: this,",
+                    "        success: function(response, opts)",
+                    "        {",
+                    "            var responseData = Ext.JSON.decode(response.responseText);",
+                    "            if(responseData.success)",
+                    "            {",
+                    "                VERIFIED = responseData.data.verified;",
+                    "",
+                    "                ROL = responseData.data.rolAp_apps[0].id_rol;",
+                    "                NOMBRE = responseData.data.nombre_apps;",
+                    "                if(VERIFIED === true && ROL === 1){",
+                    "                    Ext.create('voto.view.vwprtAdministracion', {renderTo: Ext.getBody()});",
+                    "                    Ext.getCmp('displayusuario1').setText(NOMBRE);",
+                    "                }",
+                    "                else if(VERIFIED === true && ROL === 2){",
+                    "                    Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                    "                    Ext.getCmp('displayusuario').setText(\"TRIBUNAL: \"+NOMBRE);",
+                    "                }",
+                    "                else",
+                    "                {",
+                    "                    Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                    "                }",
+                    "",
+                    "            }else{",
+                    "                Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                    "            }",
+                    "",
+                    "        },",
+                    "",
+                    "        failure: function(response, opts)",
+                    "        {",
+                    "            Ext.Msg.show({",
+                    "                title:'Error',",
+                    "                msg: 'Usuario o clave mal ingresados',",
+                    "                buttons: Ext.Msg.OK,",
+                    "                icon: Ext.MessageBox.WARNING",
+                    "            });",
+                    "        }",
+                    "    });",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "c2d7f773-589a-474c-bb74-b382f839e906"
+        }
+    ]
+}

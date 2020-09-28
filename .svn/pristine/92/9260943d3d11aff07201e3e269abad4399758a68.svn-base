@@ -1,0 +1,100 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlproceso",
+        "designer|userClassName": "pnlProceso",
+        "layout": "fit",
+        "title": "Inicio de Votaciones"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel12",
+    "designerId": "21503fcb-477b-4df1-8f2e-c6ca9ad65514",
+    "viewControllerInstanceId": "b98a10a9-4e2d-4cc7-b8a8-48857227546a",
+    "viewModelInstanceId": "6124a5e8-a699-4f9b-b12c-80593dbe3bfa",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPanel12",
+            "designerId": "08b31b80-404a-4a2c-911f-4885a063dfe1",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "end",
+                        "height": 125,
+                        "layout": "vbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "height": "auto",
+                        "layout": "string"
+                    },
+                    "name": "MyPanel13",
+                    "designerId": "61e7247a-e120-47cd-93b9-f000392bc70a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Iniciar Proceso"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "ef414d79-f832-4e56-807e-e24888ea3ebe",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "c8bcaa10-caf6-4a3d-821f-913c1def8511"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vwprtlogin",
+        "designer|userClassName": "vwprtLogin",
+        "height": 250,
+        "layout": "border",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto",
+        "designer|initialView": "boolean"
+    },
+    "name": "MyViewport3",
+    "designerId": "43081d80-7b8f-4110-87f4-47f256b568c3",
+    "viewControllerInstanceId": "7c7397b0-75e7-4525-866e-b0d106fca3ef",
+    "viewModelInstanceId": "9da4018f-a252-4484-a98d-380f3c7a3f10",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyStyle": "background-color : #666666",
+                "layout": "center",
+                "layout|region": "center"
+            },
+            "configAlternates": {
+                "bodyStyle": "string",
+                "layout": "string",
+                "layout|region": "string"
+            },
+            "name": "MyPanel",
+            "designerId": "21173419-35f3-4038-934a-c57bedc20cef",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 250,
+                        "layout": "border",
+                        "width": 600
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyPanel1",
+                    "designerId": "595ced6a-5bb3-482b-950e-8105f028d3b7",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "",
+                                "layout|region": "west",
+                                "width": 200
+                            },
+                            "configAlternates": {
+                                "html": "string",
+                                "layout|region": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyPanel2",
+                            "designerId": "571c7929-32ee-44f8-ba2a-723136b86168"
+                        },
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyPadding": 10,
+                                "container|align": "center",
+                                "container|pack": "center",
+                                "id": "FormaLogin",
+                                "layout": "vbox",
+                                "layout|region": "center"
+                            },
+                            "configAlternates": {
+                                "bodyPadding": "auto",
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "id": "string",
+                                "layout": "string",
+                                "layout|region": "string"
+                            },
+                            "name": "MyForm",
+                            "designerId": "a4209fe2-e1eb-43b5-957b-3d0d46d8d2d5",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "enforceMaxLength": true,
+                                        "fieldLabel": "Usuario",
+                                        "margin": "50 0 0 0",
+                                        "maxLength": 30,
+                                        "name": "usuario"
+                                    },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "margin": "auto",
+                                        "maxLength": "number",
+                                        "name": "string"
+                                    },
+                                    "name": "MyTextField",
+                                    "designerId": "2984aeb6-2fcf-4cf2-a715-f3181d24be9d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "allowBlank": false,
+                                        "enforceMaxLength": true,
+                                        "fieldLabel": "Contraseña",
+                                        "inputType": "password",
+                                        "margin": "20 0 0 0",
+                                        "maxLength": 30,
+                                        "name": "clave"
+                                    },
+                                    "configAlternates": {
+                                        "allowBlank": "boolean",
+                                        "enforceMaxLength": "boolean",
+                                        "fieldLabel": "string",
+                                        "inputType": "string",
+                                        "margin": "auto",
+                                        "maxLength": "number",
+                                        "name": "string"
+                                    },
+                                    "name": "MyTextField1",
+                                    "designerId": "d889d5dc-5134-4d23-8196-88225ad5a53d",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onTextfieldSpecialkey",
+                                                "implHandler": [
+                                                    "//asigna la funcion del boton a la tecla ENTER",
+                                                    "if(e.getKey() == e.ENTER)",
+                                                    "        {",
+                                                    "            this.onButtonClick();",
+                                                    "        }"
+                                                ],
+                                                "name": "specialkey",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onTextfieldSpecialkey",
+                                            "designerId": "1e189dba-8ca1-4807-830f-9e7d4686a76f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "margin": "20 0 0 0",
+                                        "text": "Aceptar",
+                                        "width": 100
+                                    },
+                                    "configAlternates": {
+                                        "margin": "auto",
+                                        "text": "string",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyButton",
+                                    "designerId": "4f317a35-7b92-4540-afe1-867a56e1d078",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick",
+                                                "implHandler": [
+                                                    "var forma = this.getView().down('#FormaLogin').getForm();",
+                                                    "if(forma.isValid())",
+                                                    "{",
+                                                    "    forma.submit(",
+                                                    "        {",
+                                                    "            url: '../servidor/login/revisa',",
+                                                    "            method: 'post',",
+                                                    "            scope: this,",
+                                                    "            success: function(response, opts)",
+                                                    "            {",
+                                                    "                var responseData = opts.result.data;",
+                                                    "                VERIFIED = responseData.verified;",
+                                                    "                ",
+                                                    "                if(responseData.rolAp_apps[0].id_rol === null){",
+                                                    "                    Ext.Msg.show({",
+                                                    "                            title:'Error',",
+                                                    "                            msg: 'Usted no tiene permisos para acceder',",
+                                                    "                            buttons: Ext.Msg.OK,",
+                                                    "                            icon: Ext.MessageBox.WARNING",
+                                                    "                        });",
+                                                    "                }",
+                                                    "                else{",
+                                                    "                    ROL = responseData.rolAp_apps[0].id_rol;",
+                                                    "                    NOMBRE = responseData.nombre_apps;",
+                                                    "                    if(VERIFIED === true && ROL === 1){",
+                                                    "                        this.getView().destroy();",
+                                                    "                        Ext.create('voto.view.vwprtAdministracion', {renderTo: Ext.getBody()});",
+                                                    "                        Ext.getCmp('displayusuario1').setText(NOMBRE);",
+                                                    "                    }",
+                                                    "                    else if(VERIFIED === true && ROL === 2){",
+                                                    "                        this.getView().destroy();",
+                                                    "                        Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                                    "                        Ext.getCmp('displayusuario').setText('TRIBUNAL: '+NOMBRE);",
+                                                    "                    }",
+                                                    "                    else{",
+                                                    "                        Ext.Msg.show({",
+                                                    "                            title:'Error',",
+                                                    "                            msg: 'Usted no tiene permisos para acceder',",
+                                                    "                            buttons: Ext.Msg.OK,",
+                                                    "                            icon: Ext.MessageBox.WARNING",
+                                                    "                        });",
+                                                    "                    }",
+                                                    "                }",
+                                                    "            },",
+                                                    "",
+                                                    "            failure: function(response, opts)",
+                                                    "            {",
+                                                    "                Ext.Msg.show({",
+                                                    "                    title:'Error',",
+                                                    "                    msg: 'Usuario o clave mal ingresados',",
+                                                    "                    buttons: Ext.Msg.OK,",
+                                                    "                    icon: Ext.MessageBox.WARNING",
+                                                    "                });",
+                                                    "            }",
+                                                    "        });",
+                                                    "}",
+                                                    "else",
+                                                    "{",
+                                                    "    Ext.Msg.alert('Error', 'Debe llenar todos los campos');",
+                                                    "}"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "name": "string",
+                                                "scope": "string",
+                                                "implHandler": "code"
+                                            },
+                                            "name": "onButtonClick",
+                                            "designerId": "cd93bb08-521a-4f44-8061-34ff42b6dfa7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "margin": 20,
+                                        "style": "fontFamily : Georgia; font-style: italic; font-size: 14px",
+                                        "text": "Desarrollado por la Dirección Informática | PUCE"
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number",
+                                        "margin": "auto",
+                                        "style": "string",
+                                        "text": "string"
+                                    },
+                                    "name": "MyLabel",
+                                    "designerId": "2892b188-c3fa-4213-b0c2-4c60d97e94fe"
+                                },
+                                {
+                                    "type": "Ext.form.field.Hidden",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": "Label",
+                                        "flex": 1,
+                                        "name": "aplicacion",
+                                        "value": [
+                                            "voto"
+                                        ],
+                                        "width": 150
+                                    },
+                                    "configAlternates": {
+                                        "fieldLabel": "string",
+                                        "flex": "number",
+                                        "name": "string",
+                                        "value": "object",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyHiddenField",
+                                    "designerId": "08824e34-7fa7-40d0-817a-0d725d4f1c9c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

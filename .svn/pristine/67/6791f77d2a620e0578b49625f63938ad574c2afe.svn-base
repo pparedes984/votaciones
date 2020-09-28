@@ -1,0 +1,208 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnltipocandidato",
+        "designer|userClassName": "pnlTipoCandidato",
+        "layout": "fit",
+        "title": "Tipo Candidato"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel14",
+    "designerId": "e4a4f6e0-2767-4ae5-8339-1eaa4ea13f2b",
+    "viewControllerInstanceId": "81e51f8e-518c-49c6-9eef-8f7f6074c836",
+    "viewModelInstanceId": "ab62b35a-82d1-4354-a25c-16a8f4b7ed5a",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar4",
+            "designerId": "097528ad-b53c-4dbf-8cb2-61ee17dfedcf",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-plus",
+                        "id": "btnNuevoTipo",
+                        "layout|flex": null,
+                        "text": "Nuevo"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton12",
+                    "designerId": "d1ee22b4-063d-43d5-ab05-cdb1c5344cd6",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnNuevoTipoClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnNuevoTipoClick",
+                            "designerId": "0e7ffd23-41f9-41d7-b5bc-bb42dd4e4225"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-trash",
+                        "id": "btnEliminarTipo",
+                        "layout|flex": null,
+                        "text": "Eiminar"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton13",
+                    "designerId": "1c383bfb-c516-4798-83b9-bddb2f3e4c18",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnEliminarTipoClick",
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnEliminarTipoClick",
+                            "designerId": "9872a2f0-7672-4883-91d7-d61d428885fb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "id": "grdTipoCandidato",
+                "store": "TipoCandidato",
+                "title": ""
+            },
+            "configAlternates": {
+                "forceFit": "boolean",
+                "id": "string",
+                "store": "store",
+                "title": "string"
+            },
+            "name": "MyGridPanel2",
+            "designerId": "a5217cdd-4202-4490-8cc3-e86e4f706a43",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable2",
+                    "designerId": "cdb77c54-cc0f-4428-aad6-fb7d41968e23"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "votos",
+                        "format": "00",
+                        "text": "Votos"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn2",
+                    "designerId": "24d42d9a-be5b-4ace-a905-afd03833b966"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "descripcion",
+                        "text": "Descripcion"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn4",
+                    "designerId": "d51949a2-9e6e-47b7-91f9-6d58d66e3509"
+                }
+            ]
+        }
+    ]
+}

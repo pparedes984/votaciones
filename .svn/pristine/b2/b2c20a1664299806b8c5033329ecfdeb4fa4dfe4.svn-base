@@ -1,0 +1,432 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "wndcandidato",
+        "designer|userClassName": "wndCandidato",
+        "height": 409,
+        "id": "wndCandidato",
+        "layout": "center",
+        "title": "Nuevo Candidato",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "id": "string",
+        "layout": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyWindow",
+    "designerId": "fe410482-8ce7-4c4a-abad-b16e7f9fb8b1",
+    "viewControllerInstanceId": "6b4b5864-e388-4a63-9e87-89ca47954942",
+    "viewModelInstanceId": "31f973b5-006f-46f3-b75e-908fdc847976",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": 10,
+                "container|align": "center",
+                "id": "frmCandidato",
+                "layout": "vbox",
+                "reference": "form"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "container|align": "string",
+                "id": "string",
+                "layout": "string",
+                "reference": "string"
+            },
+            "name": "MyForm3",
+            "designerId": "a94c6690-7b08-4589-a003-d0044b1d6c39",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "fieldLabel": "Candidato",
+                        "id": "txtNombreC",
+                        "maskRe": "/[a-zA-Z\\s]/",
+                        "name": "nombre"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "maskRe": "regex",
+                        "name": "string"
+                    },
+                    "name": "MyTextField9",
+                    "designerId": "f2cc6700-1149-4f87-a174-8c6dc2a372ff",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTxtNombreCFocusleave",
+                                "implHandler": [
+                                    "Ext.Ajax.request({",
+                                    "    url: '../servidor/voto/candidato/verificar',",
+                                    "    method:\"post\",",
+                                    "    params: {",
+                                    "        nombre: Ext.getCmp('txtNombreC').getValue(),",
+                                    "",
+                                    "    },",
+                                    "    success: function( result, request ) {",
+                                    "        var responseData = Ext.JSON.decode(result.responseText);",
+                                    "        if(responseData.success){",
+                                    "            Ext.Msg.alert('Error','El candidato ya existe');",
+                                    "            Ext.getCmp('txtNombreC').setValue('');",
+                                    "            Ext.getCmp('txtNombreC').reset();",
+                                    "        }",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "    failure: function(response, opts) {",
+                                    "",
+                                    "        console.log('server-side failure with status code ' + response.status);",
+                                    "    }",
+                                    "});"
+                                ],
+                                "name": "focusleave",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTxtNombreCFocusleave",
+                            "designerId": "b02a771b-7a56-40ec-b763-5ba3c7bbb624"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowBlank": false,
+                        "autoLoadOnValue": true,
+                        "displayField": "descripcion",
+                        "editable": false,
+                        "fieldLabel": "Tipo",
+                        "id": "cbTipoCandidato",
+                        "name": "id_tipo_candidato",
+                        "queryMode": "local",
+                        "store": "TipoCandidato",
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "allowBlank": "boolean",
+                        "autoLoadOnValue": "boolean",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "fieldLabel": "string",
+                        "id": "string",
+                        "name": "string",
+                        "queryMode": "string",
+                        "store": "store",
+                        "valueField": "datafield"
+                    },
+                    "name": "MyComboBox",
+                    "designerId": "fcf3f85d-a7d3-491d-b78e-6a25255edb68"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "btnCargarI",
+                        "maxHeight": 30,
+                        "text": "Cargar imágen"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "maxHeight": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton17",
+                    "designerId": "adfef811-5614-45d6-a41b-9611b04a5442",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBtnCargarIClick",
+                                "implHandler": [
+                                    "PDF_PATH = '../documentos/voto/';",
+                                    "",
+                                    "x ='';",
+                                    "var d = new Date();",
+                                    "var y = d.getFullYear();",
+                                    "var mo = d.getMonth();",
+                                    "var da = d.getDate();",
+                                    "var h = d.getHours();",
+                                    "var m = d.getMinutes();",
+                                    "var s = d.getSeconds();",
+                                    "",
+                                    "x = y+\"\"+mo+\"\"+da+\"\"+h+\"\"+m+\"\"+s;",
+                                    "",
+                                    "idEvidencia = x + '.jpg';",
+                                    "",
+                                    "voto.view.Utilidades.loadPDF(idEvidencia, PDF_PATH);",
+                                    "",
+                                    "",
+                                    "URL = '<div style=\"display: flex; justify-content: center;\"><img src=\"../documentos/voto/';",
+                                    "URL2 = '../documentos/voto/';",
+                                    "URL2 = URL2.concat(x);",
+                                    "URL = URL.concat(idEvidencia);",
+                                    "URL = URL.concat('\" height=\"124\"></div>');",
+                                    "ventana = 0;"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onBtnCargarIClick",
+                            "designerId": "046baf29-949b-4cc7-b209-8338c2a7a7da"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 124,
+                        "id": "id_panel_foto",
+                        "margin": "10 0 0 10",
+                        "style": "border-right:1px solid #919191; border-left:1px solid #919191; border-top:1px solid #919191; border-bottom:1px solid #919191;",
+                        "width": 106
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "id": "string",
+                        "margin": "auto",
+                        "style": "string",
+                        "width": "auto"
+                    },
+                    "name": "MyPanel14",
+                    "designerId": "228bce17-566e-4868-a9a0-790fc9f841d4"
+                },
+                {
+                    "type": "Ext.container.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "middle",
+                        "container|pack": "center",
+                        "designer|displayName": "buttons",
+                        "layout": "hbox",
+                        "padding": 10
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "designer|displayName": "string",
+                        "layout": "string",
+                        "padding": "auto"
+                    },
+                    "name": "MyContainer",
+                    "designerId": "1d560f6a-e3c1-438e-9fe5-c5a094b1e3e8",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "cancelButton",
+                                "layout|flex": 1,
+                                "margin": 5,
+                                "text": "Cancelar"
+                            },
+                            "configAlternates": {
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton18",
+                            "designerId": "bdab285c-1df6-414d-b84b-6f68aedeb42a",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onCancelButtonClick",
+                                        "implHandler": [
+                                            "Ext.getCmp('wndCandidato').close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onCancelButtonClick",
+                                    "designerId": "96b338b0-21c5-41c9-9ffd-a4258b5d2497"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "formBind": true,
+                                "itemId": "saveButton",
+                                "layout|flex": 1,
+                                "margin": 5,
+                                "text": "Guardar"
+                            },
+                            "configAlternates": {
+                                "formBind": "boolean",
+                                "itemId": "string",
+                                "layout|flex": "number",
+                                "margin": "auto",
+                                "text": "string"
+                            },
+                            "name": "MyButton19",
+                            "designerId": "fb00041c-bdea-4dff-9efd-3c35c53fbfb8",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onSaveButtonClick",
+                                        "implHandler": [
+                                            "Ext.Msg.show({",
+                                            "    title: 'Atención',",
+                                            "    msg: 'Esta seguro de crear el candidato. ¿Desea continuar?',",
+                                            "    icon: Ext.Msg.QUESTION,",
+                                            "    buttonText: {",
+                                            "        no: 'No',",
+                                            "        yes: 'Si'",
+                                            "    },",
+                                            "    buttons: Ext.Msg.YESNO,",
+                                            "    fn: function (btn) {",
+                                            "        if (btn == 'yes') {",
+                                            "            var form = Ext.getCmp('frmCandidato').getForm(),",
+                                            "                store = Ext.getStore('Candidato');",
+                                            "",
+                                            "            if (form.isValid()) {",
+                                            "                var values = form.getValues();",
+                                            "                store.add(values);",
+                                            "",
+                                            "                store.sync(",
+                                            "                    {",
+                                            "                        params:{",
+                                            "                            foto : URL2",
+                                            "                        },",
+                                            "                        success: function(result, options)",
+                                            "                        {",
+                                            "                            Ext.getCmp('wndCandidato').close();",
+                                            "                            Ext.Msg.alert('Datos Guardados','Se han guardado los datos exitosamente');",
+                                            "                            var store = Ext.getCmp('grdCandidato').getStore();",
+                                            "",
+                                            "                            store.removeAll();",
+                                            "                            store.load();",
+                                            "                            Ext.getCmp('wndCandidato').close();",
+                                            "                        },",
+                                            "                        failure: function(batch, options)",
+                                            "                        {",
+                                            "",
+                                            "                            Ext.Msg.alert('Error', 'Hubo un error.');",
+                                            "                            store.removeAll();",
+                                            "                        }",
+                                            "                    }",
+                                            "                );",
+                                            "            }",
+                                            "",
+                                            "",
+                                            "            else",
+                                            "            {",
+                                            "                Ext.Msg.alert('Error','Ingrese los datos correctamente');",
+                                            "            }",
+                                            "        }}",
+                                            "});",
+                                            "",
+                                            "",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onSaveButtonClick",
+                                    "designerId": "fc3fb284-0611-4d62-a9e4-fb6ed97774e5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

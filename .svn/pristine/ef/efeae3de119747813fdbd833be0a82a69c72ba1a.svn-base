@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UsuarioSistema_model"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "8c3f8f47-e62b-4f8e-a748-99340e088c19",
+    "cn": [
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "usuario"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString2",
+            "designerId": "0bc0bc49-0c95-4e42-a124-8f1be971163a"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nombre"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString3",
+            "designerId": "9d4c8078-a03e-4f0c-bd78-8693aa3c75d1"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id_rol"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString12",
+            "designerId": "8a4cd0c7-26c1-4deb-8336-b617c500dd3f"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rol_id"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString22",
+            "designerId": "e985182d-9a1e-4cb9-9f69-f812d131b539"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "rol_descripcion"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString23",
+            "designerId": "8a978ead-4f37-4e24-acba-fa0967620696"
+        }
+    ]
+}

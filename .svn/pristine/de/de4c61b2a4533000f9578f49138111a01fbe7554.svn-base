@@ -1,0 +1,189 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlcarga",
+        "designer|userClassName": "pnlCarga",
+        "layout": "fit",
+        "title": "Carga de Estudiantes"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel19",
+    "designerId": "6234e532-6bbe-4aa9-9c96-8c88278b5574",
+    "viewControllerInstanceId": "a4a49d68-b759-4b99-9051-30cd99a923b6",
+    "viewModelInstanceId": "0e54cf71-2208-4b8e-8b97-a32f2e1a8cee",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPanel19",
+            "designerId": "01e3de94-9603-4854-bc36-7e5ec6a3a4a0",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "center",
+                        "container|pack": "end",
+                        "height": 123,
+                        "layout": "vbox"
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "height": "auto",
+                        "layout": "string"
+                    },
+                    "name": "MyPanel20",
+                    "designerId": "1aa749de-bc55-434c-bc45-77688c809370",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "text": "Cargar Estudiantes"
+                            },
+                            "configAlternates": {
+                                "text": "string"
+                            },
+                            "name": "MyButton8",
+                            "designerId": "3f4e68a1-4676-48ad-a87a-8ef39fb59fe4",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "PDF_PATH = '../documentos/voto/';",
+                                            "",
+                                            "x ='';",
+                                            "var d = new Date();",
+                                            "var y = d.getFullYear();",
+                                            "var mo = d.getMonth();",
+                                            "var da = d.getDate();",
+                                            "var h = d.getHours();",
+                                            "var m = d.getMinutes();",
+                                            "var s = d.getSeconds();",
+                                            "",
+                                            "x = y+\"\"+mo+\"\"+da+\"\"+h+\"\"+m+\"\"+s;",
+                                            "",
+                                            "idEvidencia = x + '.csv';",
+                                            "",
+                                            "voto.view.Utilidades.loadArchivo(idEvidencia, PDF_PATH",
+                                            "                                   //function(btn) {",
+                                            "                                   //Ext.getCmp('frmMini').getRecord().set('EVIDENCIA', idEvidencia);",
+                                            "                                   //}",
+                                            "                                  );"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "onButtonClick",
+                                    "designerId": "5e6991fd-d493-4f18-9657-d3029edbbfc5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top"
+                    },
+                    "configAlternates": {
+                        "dock": "string"
+                    },
+                    "name": "MyToolbar2",
+                    "designerId": "ac263b74-48ab-4b13-9282-ed05673b22af",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "href": "../documentos/votaciones/DescargaPlantilla.zip",
+                                "iconAlign": "right",
+                                "iconCls": "x-fa fa-download",
+                                "id": "btnDescargarP",
+                                "layout|flex": null,
+                                "text": "Descargar Plantilla"
+                            },
+                            "configAlternates": {
+                                "href": "string",
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "id": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton9",
+                            "designerId": "129de6aa-644d-4712-a811-8689e8043170",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnDescargarPClick",
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnDescargarPClick",
+                                    "designerId": "fa52c663-1196-4494-ac0a-283b8dc4e7b2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

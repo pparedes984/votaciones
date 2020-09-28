@@ -1,0 +1,140 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlusuariosistema",
+        "designer|userClassName": "pnlUsuarioSistema",
+        "layout": "fit",
+        "title": "Usuario Sistema"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel21",
+    "designerId": "4c83a1c0-e68a-4300-a36d-1b71d58b732c",
+    "viewControllerInstanceId": "68f0fdb8-26a5-406c-a318-db20bd3433bc",
+    "viewModelInstanceId": "7041f3df-3fb2-441e-9168-43e7c186d206",
+    "cn": [
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top"
+            },
+            "configAlternates": {
+                "dock": "string"
+            },
+            "name": "MyToolbar3",
+            "designerId": "d922f536-5213-4338-97e5-d93513723dc0",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-plus",
+                        "id": "btnNuevoUs",
+                        "layout|flex": null,
+                        "text": "Nuevo"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton10",
+                    "designerId": "8b3cc721-fb5b-4e61-9c28-a2bd781e8783"
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconAlign": "right",
+                        "iconCls": "x-fa fa-trash",
+                        "id": "btnEliminarUs",
+                        "layout|flex": null,
+                        "text": "Eliminar"
+                    },
+                    "configAlternates": {
+                        "iconAlign": "string",
+                        "iconCls": "string",
+                        "id": "string",
+                        "layout|flex": "number",
+                        "text": "string"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "6efa7757-3e6e-4b82-8a82-8872c0f2fb9b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "id": "grdUsuarioSistema"
+            },
+            "configAlternates": {
+                "forceFit": "boolean",
+                "id": "string"
+            },
+            "name": "MyGridPanel1",
+            "designerId": "e89d148d-6ec5-4904-b5ea-d2288cb04e71",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "bool",
+                        "text": "Boolean"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyBooleanColumn1",
+                    "designerId": "326df672-b28e-4356-992f-7423ecc53063"
+                },
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable1",
+                    "designerId": "f1e89247-8e20-4896-a6a8-ee3248715f31"
+                }
+            ]
+        }
+    ]
+}

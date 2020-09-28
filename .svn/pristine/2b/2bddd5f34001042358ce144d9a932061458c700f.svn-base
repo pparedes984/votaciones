@@ -1,0 +1,136 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "pnlresultados",
+        "designer|userClassName": "pnlResultados",
+        "layout": "fit",
+        "title": "Resultados"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel3",
+    "designerId": "bbdcc2a6-7865-48b8-8fdb-5d0766a5b9a6",
+    "viewControllerInstanceId": "e88b3d3d-32b1-4b74-98d5-f2bf6b240574",
+    "viewModelInstanceId": "12e72ead-1139-444e-9ff2-8dba039a3db6",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "forceFit": true,
+                "id": "grdResultado",
+                "store": "Resultado",
+                "title": ""
+            },
+            "configAlternates": {
+                "forceFit": "boolean",
+                "id": "string",
+                "store": "store",
+                "title": "string"
+            },
+            "name": "MyGridPanel4",
+            "designerId": "9d640ddb-2b62-46fa-bd9d-3591c221157b",
+            "cn": [
+                {
+                    "type": "Ext.view.Table",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyTable4",
+                    "designerId": "8816dafd-14a8-4c54-89ff-7fc38e55c8e2"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "descripcion",
+                        "text": "Tipo Candidato"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn15",
+                    "designerId": "26ea5677-34c0-42ce-8789-336d759db41c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombre",
+                        "text": "Candidato"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "text": "string"
+                    },
+                    "name": "MyColumn12",
+                    "designerId": "71f9b6cc-7484-4f7a-b628-071800a76386"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "voto",
+                        "format": "00",
+                        "text": "Votos"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "format": "string",
+                        "text": "string"
+                    },
+                    "name": "MyNumberColumn",
+                    "designerId": "8bfea798-89b3-40a1-9b29-00934c9b4309"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "id_candidato",
+                        "hidden": true,
+                        "text": "Id Candidato"
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "hidden": "boolean",
+                        "text": "string"
+                    },
+                    "name": "MyColumn13",
+                    "designerId": "5abc755b-30f2-4d03-9547-03a1e0b568b8"
+                }
+            ]
+        }
+    ]
+}

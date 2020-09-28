@@ -1,0 +1,859 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vwprtadministracion",
+        "designer|userClassName": "vwprtAdministracion",
+        "height": 250,
+        "html": "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">",
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "html": "string",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport",
+    "designerId": "a146d673-fc93-4cf3-aa4e-88a18b0324e3",
+    "viewControllerInstanceId": "a0625eab-4f0f-4ae7-bc3d-980ebfdc20a9",
+    "viewModelInstanceId": "0777eeca-5e3d-4fa0-a2ff-70cee7655378",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": "0 50 0 50",
+                "bodyStyle": "background-color : #666666",
+                "layout": "border"
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "bodyStyle": "string",
+                "layout": "string"
+            },
+            "name": "MyPanel6",
+            "designerId": "b9d762da-a5c4-4887-b15d-77a42168d304",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 90,
+                        "html": "",
+                        "layout|region": "north"
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "html": "string",
+                        "layout|region": "string"
+                    },
+                    "name": "MyPanel7",
+                    "designerId": "aa8c0766-1c74-4456-8750-c0affd46fc2e"
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "PanelCentralAdministracion",
+                        "layout": "border",
+                        "layout|region": "center"
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "layout": "string",
+                        "layout|region": "string"
+                    },
+                    "name": "MyPanel8",
+                    "designerId": "f42aae61-c27f-4c48-be5c-04fb537c00f8",
+                    "cn": [
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "pnlCentral",
+                                "layout": "fit",
+                                "layout|region": "center"
+                            },
+                            "configAlternates": {
+                                "id": "string",
+                                "layout": "string",
+                                "layout|region": "string"
+                            },
+                            "name": "MyPanel9",
+                            "designerId": "45c25d4c-0435-4aad-8c29-0f3b70def330"
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "container|pack": "center",
+                                "iconAlign": "right",
+                                "layout": "hbox",
+                                "layout|region": "west",
+                                "width": 155
+                            },
+                            "configAlternates": {
+                                "container|align": "string",
+                                "container|pack": "string",
+                                "iconAlign": "string",
+                                "layout": "string",
+                                "layout|region": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyPanel10",
+                            "designerId": "de90efe8-015c-4baf-ba3a-40fc8e465217",
+                            "cn": [
+                                {
+                                    "type": "Ext.menu.Menu",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "border": false,
+                                        "floating": false,
+                                        "padding": 10,
+                                        "plain": true,
+                                        "width": 167
+                                    },
+                                    "configAlternates": {
+                                        "border": "boolean",
+                                        "floating": "boolean",
+                                        "padding": "auto",
+                                        "plain": "boolean",
+                                        "width": "auto"
+                                    },
+                                    "name": "MyMenu",
+                                    "designerId": "385ead3b-ae21-4960-a72e-585f05e8d9c8",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fas fa-clock",
+                                                "id": "btnProceso",
+                                                "text": "Proceso"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "iconCls": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyMenuItem",
+                                            "designerId": "6829add0-ead0-49cd-ac41-eef790b37623",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnProcesoClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlProceso'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlProceso');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnProcesoClick",
+                                                    "designerId": "7acc7d24-91da-49d3-bcc4-a68fc4e669b3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-users",
+                                                "id": "btnTipoCandidato",
+                                                "text": "Tipo Candidato"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "iconCls": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyMenuItem2",
+                                            "designerId": "183a6784-5ac4-4b6d-8edc-3a6923911056",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnTipoCandidatoClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlTipoCandidato'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlTipoCandidato');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "    var store = Ext.getCmp('grdTipoCandidato').getStore();",
+                                                            "    store.removeAll();",
+                                                            "    store.load();",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnTipoCandidatoClick",
+                                                    "designerId": "a3467efe-7d8d-47c8-9694-366953a626c9"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "fas fa-user-circle",
+                                                "id": "btnCandidato",
+                                                "text": "Candidato"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string",
+                                                "iconCls": "string",
+                                                "id": "string"
+                                            },
+                                            "name": "MyMenuItem1",
+                                            "designerId": "189fb3ca-b325-41f0-ac8e-08cc7ac5b702",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCandidatoClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlCandidato'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlCandidato');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "    var store = Ext.getCmp('grdCandidato').getStore();",
+                                                            "    store.removeAll();",
+                                                            "    store.proxy.extraParams = {",
+                                                            "            busqueda: 1",
+                                                            "            };",
+                                                            "    store.load();",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCandidatoClick",
+                                                    "designerId": "ec6cc692-6b04-42e2-90bf-03e3e14f77e3"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-download",
+                                                "id": "btnVotantes",
+                                                "text": "Votantes"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem5",
+                                            "designerId": "f9e8f66f-0a9f-43e8-b87e-a3bda7c4c457",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.menu.Menu",
+                                                    "reference": {
+                                                        "name": "menu",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "name": "MyMenu1",
+                                                    "designerId": "0ebd197c-54d7-4c61-b9c8-7c767d64d2b7",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.menu.Item",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "nuevoVotante",
+                                                                "text": "Nuevo"
+                                                            },
+                                                            "configAlternates": {
+                                                                "id": "string",
+                                                                "text": "string"
+                                                            },
+                                                            "name": "MyMenuItem8",
+                                                            "designerId": "35181f96-9eb1-479d-af0f-ee355c56f24d",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onNuevoVotanteClick",
+                                                                        "implHandler": [
+                                                                            "if(!Ext.getCmp('pnlNuevo'))",
+                                                                            "{",
+                                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                                            "    var panel = Ext.create('voto.view.pnlNuevo');",
+                                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                                            "",
+                                                                            "}"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onNuevoVotanteClick",
+                                                                    "designerId": "ccedbc60-1889-4d98-9677-db0324cd2652"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.Item",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "modificarVotante",
+                                                                "text": "Modificar"
+                                                            },
+                                                            "configAlternates": {
+                                                                "id": "string",
+                                                                "text": "string"
+                                                            },
+                                                            "name": "MyMenuItem9",
+                                                            "designerId": "56d1d1fd-38bd-41be-84ee-14e71a8d35d0",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onModificarVotanteClick",
+                                                                        "implHandler": [
+                                                                            "if(!Ext.getCmp('pnlVotante'))",
+                                                                            "{",
+                                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                                            "    var panel = Ext.create('voto.view.pnlVotante');",
+                                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                                            "    var store = Ext.getCmp('grdVotante').getStore();",
+                                                                            "    store.removeAll();",
+                                                                            "    /*store.proxy.extraParams = {",
+                                                                            "        cedula:Ext.getCmp('cedulaestudiante').getValue(),",
+                                                                            "        busqueda: 1",
+                                                                            "    };*/",
+                                                                            "    store.load();",
+                                                                            "}"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onModificarVotanteClick",
+                                                                    "designerId": "afea2d8c-a2f5-41e6-a039-3d6517a953b3"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.menu.Item",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "id": "carga",
+                                                                "text": "Cargar"
+                                                            },
+                                                            "configAlternates": {
+                                                                "id": "string",
+                                                                "text": "string"
+                                                            },
+                                                            "name": "MyMenuItem10",
+                                                            "designerId": "4a526f1e-2b13-40bc-a27f-d36469984ca9",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "viewcontrollereventbinding",
+                                                                    "reference": {
+                                                                        "name": "listeners",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "fn": "onCargaClick",
+                                                                        "implHandler": [
+                                                                            "if(!Ext.getCmp('pnlCarga'))",
+                                                                            "{",
+                                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                                            "    var panel = Ext.create('voto.view.pnlCarga');",
+                                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                                            "",
+                                                                            "}"
+                                                                        ],
+                                                                        "name": "click",
+                                                                        "scope": "me"
+                                                                    },
+                                                                    "configAlternates": {
+                                                                        "fn": "string",
+                                                                        "implHandler": "code",
+                                                                        "name": "string",
+                                                                        "scope": "string"
+                                                                    },
+                                                                    "name": "onCargaClick",
+                                                                    "designerId": "9805eada-3cdf-44a3-83ee-77070ac9b17e"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-cog",
+                                                "id": "btnClaves",
+                                                "text": "Claves"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem3",
+                                            "designerId": "59d0beab-dca8-413b-a977-22723d6e4690",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnClavesClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlClaves'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlClaves');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnClavesClick",
+                                                    "designerId": "e09ac91f-6464-4fe0-b5cf-085ec83c3946"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-share-square-o",
+                                                "id": "btnCorreos",
+                                                "text": "Correos"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem4",
+                                            "designerId": "bd3cb2b1-ce94-4a73-9d23-af84bbdb0a5a",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnCorreosClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlCorreos'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlCorreos');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnCorreosClick",
+                                                    "designerId": "69cdcd78-d3fe-49bf-ae4b-372e43f27035"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-user",
+                                                "id": "btnUsuario",
+                                                "text": "Usuario Sistema"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem6",
+                                            "designerId": "b3950062-e45b-4aad-8900-9181396ccd40",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnUsuarioClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlUsuarioSistema'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlUsuarioSistema');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "    var store = Ext.getCmp('grdUsuarioSistema').getStore();",
+                                                            "    store.removeAll();",
+                                                            "    store.load();",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnUsuarioClick",
+                                                    "designerId": "b2f3274e-9395-4c3c-86b4-d03668e771cc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "x-fa fa-user",
+                                                "id": "btnResultados",
+                                                "text": "Resultados"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem11",
+                                            "designerId": "c7e5ed11-f44e-41fc-b853-735cc40d5892",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnResultadosClick",
+                                                        "implHandler": [
+                                                            "if(!Ext.getCmp('pnlResultados'))",
+                                                            "{",
+                                                            "    this.getView().down('#pnlCentral').removeAll();",
+                                                            "    var panel = Ext.create('voto.view.pnlResultados');",
+                                                            "    this.getView().down('#pnlCentral').add(panel);",
+                                                            "    var store = Ext.getCmp('grdResultado').getStore();",
+                                                            "    store.removeAll();",
+                                                            "",
+                                                            "    store.load();",
+                                                            "",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnResultadosClick",
+                                                    "designerId": "153fbdcc-501f-4b10-9c4d-584f8e2f6ee2"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.menu.Separator",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "text": "Menu Item"
+                                            },
+                                            "configAlternates": {
+                                                "text": "string"
+                                            },
+                                            "name": "MySeparator",
+                                            "designerId": "824cdd4f-7dd8-49ba-a019-e094fd3634eb"
+                                        },
+                                        {
+                                            "type": "Ext.menu.Item",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "iconCls": "fa fa-power-off",
+                                                "id": "menuSalir",
+                                                "text": "Salir"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "text": "string"
+                                            },
+                                            "name": "MyMenuItem7",
+                                            "designerId": "387b0a9a-0cf4-4164-b8c8-247b8b06d0d1",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onMenuSalirClick",
+                                                        "implHandler": [
+                                                            "var viewMain = this;",
+                                                            "    Ext.Ajax.request",
+                                                            "    (",
+                                                            "    {",
+                                                            "      url: '../servidor/login/logout',",
+                                                            "      success:function(response,options)",
+                                                            "      {",
+                                                            "        var responseData = Ext.JSON.decode(response.responseText);",
+                                                            "        if(responseData.success)",
+                                                            "        {",
+                                                            "          viewMain.getView().destroy();",
+                                                            "          Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                                                            "        }",
+                                                            "      }",
+                                                            "    }",
+                                                            "    );"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onMenuSalirClick",
+                                                    "designerId": "019dd921-5e86-4879-b527-6b8b022968ae"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bodyStyle": "background-color: #6e94d1",
+                                "dock": "bottom",
+                                "layout": "fit",
+                                "maxHeight": 45
+                            },
+                            "configAlternates": {
+                                "bodyStyle": "string",
+                                "dock": "string",
+                                "layout": "string",
+                                "maxHeight": "number"
+                            },
+                            "name": "MyPanel11",
+                            "designerId": "446126e8-6a37-4592-9374-00db02c80120",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "displayusuario1",
+                                        "margin": "15 0 15 20",
+                                        "style": "color: white"
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "margin": "auto",
+                                        "style": "string"
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "0ba12b69-9fb7-4533-a2a3-07ba36e97e6d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

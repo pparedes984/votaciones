@@ -1,0 +1,927 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "vwprtprincipal",
+        "designer|userClassName": "vwprtPrincipal",
+        "height": 250,
+        "layout": "fit",
+        "width": 400
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "width": "auto"
+    },
+    "name": "MyViewport1",
+    "designerId": "3ad21ad4-0f6a-4f80-b2a7-cf9e592165d0",
+    "viewControllerInstanceId": "0e72042c-5b55-4f2b-b43a-3abb2115e6e9",
+    "viewModelInstanceId": "f4103de0-30e9-437f-882b-fb4a358e24ad",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bodyPadding": "0 50 0 50",
+                "bodyStyle": "background-color : #666666",
+                "layout": "border",
+                "title": "",
+                "width": 150
+            },
+            "configAlternates": {
+                "bodyPadding": "auto",
+                "bodyStyle": "string",
+                "layout": "string",
+                "title": "string",
+                "width": "auto"
+            },
+            "name": "MyPanel7",
+            "designerId": "88eea1db-ba0c-4f2e-9f83-83a53a270706",
+            "cn": [
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "id": "pnlPrincipal",
+                        "layout": "fit",
+                        "layout|region": "center",
+                        "title": "    "
+                    },
+                    "configAlternates": {
+                        "id": "string",
+                        "layout": "string",
+                        "layout|region": "string",
+                        "title": "string"
+                    },
+                    "name": "MyPanel3",
+                    "designerId": "2ffa212f-381b-43c6-82ce-13c7bf44cfda",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "configAlternates": {
+                                "dock": "string"
+                            },
+                            "name": "MyToolbar",
+                            "designerId": "53c52ffb-3af9-47ad-90a1-8ef2d2a6c39d",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Fill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyFill1",
+                                    "designerId": "42e52931-6694-457a-9066-c2d82140b00b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "BLANCO",
+                                        "id": "chBlanco",
+                                        "labelWidth": 50,
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyCheckbox",
+                                    "designerId": "0e2b83bf-4876-4aad-b911-934a62dc8616",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onChBlancoChange",
+                                                "implHandler": [
+                                                    "if(Ext.getCmp('chBlanco').getValue()=== true){",
+                                                    "    var indice = Ext.getCmp('dpIndice').getValue();",
+                                                    "    Ext.getCmp('chNulo').setValue(false);",
+                                                    "    Ext.Ajax.request({",
+                                                    "        url: '../servidor/voto/Candidato/getTipo',",
+                                                    "        method:\"post\",",
+                                                    "        params:{",
+                                                    "            tipo: TIPOS.data[indice-1].id,",
+                                                    "        },",
+                                                    "        success: function( result, request ) {",
+                                                    "            var responseData = Ext.JSON.decode(result.responseText);",
+                                                    "            for(var i=0;i<responseData.data.length;i++){",
+                                                    "                if(Ext.getCmp('ch'+responseData.data[i].id) !== undefined)",
+                                                    "                    Ext.getCmp('ch'+responseData.data[i].id).setValue(false);",
+                                                    "            }",
+                                                    "        },",
+                                                    "        failure: function(response, opts) {",
+                                                    "            console.log('server-side failure with status code ' + response.status);",
+                                                    "        }",
+                                                    "    });",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onChBlancoChange",
+                                            "designerId": "5ff4cd05-c49f-481c-9ddf-174b51c13b20"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "boxLabel": "",
+                                        "fieldLabel": "NULO",
+                                        "id": "chNulo",
+                                        "labelWidth": 35,
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "boxLabel": "string",
+                                        "fieldLabel": "string",
+                                        "id": "string",
+                                        "labelWidth": "number",
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyCheckbox1",
+                                    "designerId": "c2faf45c-0846-4e57-8665-cabc26262c05",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onChNuloChange",
+                                                "implHandler": [
+                                                    "if(Ext.getCmp('chNulo').getValue()=== true){",
+                                                    "    var indice = Ext.getCmp('dpIndice').getValue();",
+                                                    "    Ext.getCmp('chBlanco').setValue(false);",
+                                                    "    Ext.Ajax.request({",
+                                                    "        url: '../servidor/voto/Candidato/getTipo',",
+                                                    "        method:\"post\",",
+                                                    "        params:{",
+                                                    "            tipo: TIPOS.data[indice-1].id,",
+                                                    "        },",
+                                                    "        success: function( result, request ) {",
+                                                    "            var responseData = Ext.JSON.decode(result.responseText);",
+                                                    "            for(var i=0;i<responseData.data.length;i++){",
+                                                    "                if(Ext.getCmp('ch'+responseData.data[i].id) !== undefined)",
+                                                    "                    Ext.getCmp('ch'+responseData.data[i].id).setValue(false);",
+                                                    "            }",
+                                                    "        },",
+                                                    "        failure: function(response, opts) {",
+                                                    "            console.log('server-side failure with status code ' + response.status);",
+                                                    "        }",
+                                                    "    });",
+                                                    "}"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onChNuloChange",
+                                            "designerId": "d811b49b-8857-4d0a-a19d-94293b94ccf4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.toolbar.Fill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null
+                                    },
+                                    "configAlternates": {
+                                        "layout|flex": "number"
+                                    },
+                                    "name": "MyFill2",
+                                    "designerId": "648112b0-9496-4421-9a4b-b5eb56eccc02"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.panel.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "fit",
+                                "title": ""
+                            },
+                            "configAlternates": {
+                                "layout": "string",
+                                "title": "string"
+                            },
+                            "name": "MyPanel5",
+                            "designerId": "04e2f82b-58b0-46e1-9bcb-eef2dafe49c7",
+                            "cn": [
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "bottom"
+                                    },
+                                    "configAlternates": {
+                                        "dock": "string"
+                                    },
+                                    "name": "MyToolbar1",
+                                    "designerId": "63201d72-da28-467b-87d7-322fd61c1f3a",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconCls": "x-fa fa-arrow-left",
+                                                "id": "btnRegresar",
+                                                "layout|flex": null,
+                                                "text": "Regresar"
+                                            },
+                                            "configAlternates": {
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "layout|flex": "number",
+                                                "text": "string",
+                                                "disabled": "boolean"
+                                            },
+                                            "name": "MyButton1",
+                                            "designerId": "b238800b-8a2f-462a-b0b3-a14e2f05f2c5",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnRegresarClick",
+                                                        "implHandler": [
+                                                            "var me = this;",
+                                                            "var indice = Ext.getCmp('dpIndice').getValue();",
+                                                            "if(indice>1){",
+                                                            "    Ext.getCmp('chBlanco').setValue(false);",
+                                                            "    Ext.getCmp('chNulo').setValue(false);",
+                                                            "",
+                                                            "    Ext.getCmp('btnRegresar').setDisabled(true);",
+                                                            "    Ext.getCmp('btnSiguiente').setDisabled(true);",
+                                                            "    Ext.getCmp('pnlVotos').removeAll();",
+                                                            "    indice--;",
+                                                            "    Ext.getCmp('dpIndice').setValue(indice);",
+                                                            "    Ext.getCmp('pnlPrincipal').setTitle(TIPOS.data[indice-1].descripcion);",
+                                                            "    me.cargarCandidatos();",
+                                                            "    Ext.getCmp('btnRegresar').focus(true);",
+                                                            "}"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnRegresarClick",
+                                                    "designerId": "05bda708-1a49-42d1-bd20-741c3c43afba"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Fill",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "configAlternates": {
+                                                "layout|flex": "number"
+                                            },
+                                            "name": "MyFill",
+                                            "designerId": "27b80218-4987-4179-a16a-9f7f755cc1c4"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Display",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": "",
+                                                "id": "dpIndice",
+                                                "layout|flex": null,
+                                                "value": "1"
+                                            },
+                                            "configAlternates": {
+                                                "fieldLabel": "string",
+                                                "id": "string",
+                                                "layout|flex": "number",
+                                                "value": "string"
+                                            },
+                                            "name": "MyDisplayField",
+                                            "designerId": "b9651451-0a7e-4c43-90bb-066e944d8141"
+                                        },
+                                        {
+                                            "type": "Ext.toolbar.Fill",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null
+                                            },
+                                            "configAlternates": {
+                                                "layout|flex": "number"
+                                            },
+                                            "name": "MyFill3",
+                                            "designerId": "c7f77ff5-df86-41ce-b8b8-4c8364a5b220"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "disabled": true,
+                                                "iconAlign": "right",
+                                                "iconCls": "x-fa fa-arrow-right",
+                                                "id": "btnSiguiente",
+                                                "layout|flex": null,
+                                                "text": "Siguiente"
+                                            },
+                                            "configAlternates": {
+                                                "iconAlign": "string",
+                                                "iconCls": "string",
+                                                "id": "string",
+                                                "layout|flex": "number",
+                                                "text": "string",
+                                                "disabled": "boolean"
+                                            },
+                                            "name": "MyButton2",
+                                            "designerId": "ff21403b-7f37-49d7-b91a-0e4546b6de4a",
+                                            "cn": [
+                                                {
+                                                    "type": "viewcontrollereventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onBtnSiguienteClick",
+                                                        "implHandler": [
+                                                            "var me = this;",
+                                                            "var indice = Ext.getCmp('dpIndice').getValue();",
+                                                            "Ext.Ajax.request({",
+                                                            "    url: '../servidor/voto/Candidato/getTipo',",
+                                                            "    method:\"post\",",
+                                                            "    params:{",
+                                                            "        tipo: TIPOS.data[indice-1].id,",
+                                                            "    },",
+                                                            "    success: function( result, request ) {",
+                                                            "        var responseData = Ext.JSON.decode(result.responseText);",
+                                                            "        var aux = 0;",
+                                                            "        VOTOS[indice-1] = [];",
+                                                            "        if(Ext.getCmp('chBlanco').getValue() === true)",
+                                                            "        {",
+                                                            "            VOTOS[indice-1].push('BLANCO');",
+                                                            "            aux++;",
+                                                            "        }",
+                                                            "        if(Ext.getCmp('chNulo').getValue() === true)",
+                                                            "        {",
+                                                            "            VOTOS[indice-1].push('NULO');",
+                                                            "            aux++;",
+                                                            "        }",
+                                                            "        for(var i=0;i<responseData.data.length;i++){",
+                                                            "            if(Ext.getCmp('ch'+responseData.data[i].id).getValue() === true){",
+                                                            "                aux++;",
+                                                            "            }",
+                                                            "        }",
+                                                            "        if(aux > 0){",
+                                                            "            for(var i=0;i<responseData.data.length;i++){",
+                                                            "                if(Ext.getCmp('ch'+responseData.data[i].id).getValue() === true){",
+                                                            "                    VOTOS[indice-1].push(responseData.data[i].id);",
+                                                            "                }",
+                                                            "            }",
+                                                            "",
+                                                            "            if(indice<TIPOS.data.length){",
+                                                            "                Ext.getCmp('chBlanco').setValue(false);",
+                                                            "                Ext.getCmp('chNulo').setValue(false);",
+                                                            "",
+                                                            "                Ext.getCmp('btnRegresar').setDisabled(true);",
+                                                            "                Ext.getCmp('btnSiguiente').setDisabled(true);",
+                                                            "                Ext.getCmp('pnlVotos').removeAll();",
+                                                            "                indice++;",
+                                                            "                Ext.getCmp('dpIndice').setValue(indice);",
+                                                            "                Ext.getCmp('pnlPrincipal').setTitle(TIPOS.data[indice-1].descripcion);",
+                                                            "                me.cargarCandidatos();",
+                                                            "                Ext.getCmp('btnSiguiente').focus(true);",
+                                                            "            }",
+                                                            "            else{",
+                                                            "                Ext.Ajax.request({",
+                                                            "                    url: '../servidor/voto/Candidato/get',",
+                                                            "                    method:\"post\",",
+                                                            "                    success: function( result, request ) {",
+                                                            "                        var responseData = Ext.JSON.decode(result.responseText);",
+                                                            "                        var mensaje = \"La votación está a punto de finalizar.<br/>\"+",
+                                                            "                            \"Usted ha votado por los siguientes candidatos<br/>\";",
+                                                            "                        for(var i=0;i<TIPOS.data.length;i++){",
+                                                            "                            mensaje = mensaje.concat(\"<br/><b>\"+TIPOS.data[i].descripcion+\"</b>\");",
+                                                            "                            for(var j = 0; j<VOTOS[i].length;j++){",
+                                                            "                                for(var a = 0;a<responseData.data.length;a++)",
+                                                            "                                {",
+                                                            "                                    if(VOTOS[i][j] === 'BLANCO'){",
+                                                            "                                        mensaje = mensaje.concat(\"<br/>BLANCO</b>\");",
+                                                            "                                        break;",
+                                                            "                                    }",
+                                                            "                                    else if(VOTOS[i][j] === 'NULO'){",
+                                                            "                                        mensaje = mensaje.concat(\"<br/>NULO</b>\");",
+                                                            "                                        break;",
+                                                            "                                    }",
+                                                            "                                    else if(VOTOS[i][j] === responseData.data[a].id){",
+                                                            "                                        mensaje = mensaje.concat(\"<br/>\"+responseData.data[a].nombre+\"</b>\");",
+                                                            "                                        break;",
+                                                            "                                    }",
+                                                            "",
+                                                            "                                }",
+                                                            "                            }",
+                                                            "                            mensaje = mensaje.concat(\"</br>\");",
+                                                            "                        }",
+                                                            "                        mensaje = mensaje.concat(\"<br/>¿Está seguro que desea continuar?\");",
+                                                            "                        Ext.Msg.show({",
+                                                            "                            title: 'Atención',",
+                                                            "                            msg: mensaje,",
+                                                            "                            iconCls:'x-fa fa-info',",
+                                                            "                            buttonText: {",
+                                                            "                                yes: 'Si',",
+                                                            "                                no: 'No'",
+                                                            "                            },",
+                                                            "                            buttons: Ext.Msg.YESNO,",
+                                                            "                            fn: function (btn) {",
+                                                            "                                Ext.Ajax.request(",
+                                                            "                                    {",
+                                                            "                                        url: '../servidor/login/sesiones',",
+                                                            "                                        method: 'post',",
+                                                            "                                        scope: this,",
+                                                            "                                        success: function(response, opts)",
+                                                            "                                        {",
+                                                            "                                            var responseData = Ext.JSON.decode(response.responseText);",
+                                                            "                                            if(responseData.success)",
+                                                            "                                            {",
+                                                            "                                                VERIFICADO = responseData.data.verified;",
+                                                            "",
+                                                            "",
+                                                            "                                                if(VERIFICADO){",
+                                                            "                                                    Ext.Ajax.request({",
+                                                            "                                                        url: '../servidor/voto/votante/revisaVoto',",
+                                                            "                                                        method:\"post\",",
+                                                            "                                                        scope:this,",
+                                                            "                                                        params: {",
+                                                            "                                                            cedula: VOTANTE.cedula",
+                                                            "                                                        },",
+                                                            "                                                        success: function( result, request )",
+                                                            "                                                        {",
+                                                            "                                                            var responseData = Ext.decode(result.responseText);",
+                                                            "                                                            if (!responseData.success) {",
+                                                            "                                                                Ext.Msg.show({",
+                                                            "                                                                    title:'Error',",
+                                                            "                                                                    msg: 'El usuario actual ya realizó la votación',",
+                                                            "                                                                    buttons: Ext.Msg.OK,",
+                                                            "                                                                    icon: Ext.MessageBox.WARNING",
+                                                            "                                                                });",
+                                                            "                                                                var viewMain = me;",
+                                                            "                                                                viewMain.getView().destroy();",
+                                                            "                                                                Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                                            "                                                                Ext.getCmp('displayusuario').setText('TRIBUNAL: '+NOMBRE);",
+                                                            "                                                            }",
+                                                            "                                                            else{",
+                                                            "                                                                Ext.Ajax.request",
+                                                            "                                                                (",
+                                                            "                                                                    {",
+                                                            "                                                                        method: 'post',",
+                                                            "                                                                        url: '../servidor/voto/voto/savevoto',",
+                                                            "                                                                        params: {",
+                                                            "                                                                            votos:Ext.encode(VOTOS),",
+                                                            "                                                                            cedula: VOTANTE.cedula",
+                                                            "                                                                        },",
+                                                            "                                                                        success: function (response, options) {",
+                                                            "                                                                            var responseData = Ext.JSON.decode(response.responseText);",
+                                                            "                                                                            if (!responseData.success) {",
+                                                            "                                                                                Ext.Msg.show//Mensaje de Error",
+                                                            "                                                                                (",
+                                                            "                                                                                    {",
+                                                            "                                                                                        title: 'Error',",
+                                                            "                                                                                        msg: responseData.message,",
+                                                            "                                                                                        icon: Ext.Msg.ERROR,",
+                                                            "                                                                                        buttons: Ext.Msg.OK",
+                                                            "                                                                                    }",
+                                                            "                                                                                );",
+                                                            "                                                                            }",
+                                                            "                                                                            else {",
+                                                            "                                                                                var strRegistro = Ext.getStore('Registro');",
+                                                            "                                                                                Ext.Msg.alert('Correcto', 'Votacion Realizada<br/>'+",
+                                                            "                                                                                              'Se cerrará su sesión.');",
+                                                            "                                                                                var viewMain = me;",
+                                                            "                                                                                viewMain.getView().destroy();",
+                                                            "                                                                                Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                                            "                                                                                Ext.getCmp('displayusuario').setText('TRIBUNAL: '+NOMBRE);",
+                                                            "                                                                            }",
+                                                            "                                                                        },",
+                                                            "                                                                        failure: function (response, options){",
+                                                            "                                                                            var responseData = Ext.JSON.decode(response.responseText);",
+                                                            "                                                                            Ext.Msg.show//Mensaje de Error",
+                                                            "                                                                            (",
+                                                            "                                                                                {",
+                                                            "                                                                                    title: 'Error',",
+                                                            "                                                                                    msg: responseData.message,",
+                                                            "                                                                                    icon: Ext.Msg.ERROR,",
+                                                            "                                                                                    buttons: Ext.Msg.OK",
+                                                            "                                                                                }",
+                                                            "                                                                            );",
+                                                            "                                                                        }",
+                                                            "                                                                    }",
+                                                            "                                                                );",
+                                                            "                                                            }",
+                                                            "                                                        },",
+                                                            "",
+                                                            "                                                        failure: function(response, opts)",
+                                                            "                                                        {",
+                                                            "                                                            Ext.Msg.show({",
+                                                            "                                                                title:'Error',",
+                                                            "                                                                msg: 'El usuario actual ya realizó la votación',",
+                                                            "                                                                buttons: Ext.Msg.OK,",
+                                                            "                                                                icon: Ext.MessageBox.WARNING",
+                                                            "                                                            });",
+                                                            "                                                            var viewMain = me;",
+                                                            "                                                            viewMain.getView().destroy();",
+                                                            "                                                            Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                                            "                                                            Ext.getCmp('displayusuario').setText('TRIBUNAL: '+NOMBRE);",
+                                                            "                                                        }",
+                                                            "                                                    });",
+                                                            "",
+                                                            "                                                }",
+                                                            "                                                else",
+                                                            "                                                {",
+                                                            "",
+                                                            "                                                    Ext.Msg.alert('Error', 'La sesion a caducado.');",
+                                                            "                                                    var viewMain = me;",
+                                                            "                                                    viewMain.getView().destroy();",
+                                                            "                                                    Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                                                            "                                                }",
+                                                            "",
+                                                            "                                            }else{",
+                                                            "                                                Ext.Msg.alert('Error', 'La sesion a caducado.');",
+                                                            "                                                var viewMain = me;",
+                                                            "                                                viewMain.getView().destroy();",
+                                                            "                                                Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                                                            "                                            }",
+                                                            "",
+                                                            "                                        },",
+                                                            "",
+                                                            "                                        failure: function(response, opts)",
+                                                            "                                        {",
+                                                            "                                            Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                                            "                                        }",
+                                                            "                                    });",
+                                                            "                            }",
+                                                            "                        });",
+                                                            "                    },",
+                                                            "                    failure: function(response, opts) {",
+                                                            "                        console.log('server-side failure with status code ' + response.status);",
+                                                            "                    }",
+                                                            "                });",
+                                                            "            }",
+                                                            "        }",
+                                                            "        else{",
+                                                            "            Ext.Msg.show({",
+                                                            "                title:'Advertencia',",
+                                                            "                msg: 'Debe elegir una opción.',",
+                                                            "                buttons: Ext.Msg.OK,",
+                                                            "                icon: Ext.MessageBox.WARNING",
+                                                            "            });",
+                                                            "        }",
+                                                            "    },",
+                                                            "    failure: function(response, opts) {",
+                                                            "        console.log('server-side failure with status code ' + response.status);",
+                                                            "    }",
+                                                            "});"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "configAlternates": {
+                                                        "fn": "string",
+                                                        "implHandler": "code",
+                                                        "name": "string",
+                                                        "scope": "string"
+                                                    },
+                                                    "name": "onBtnSiguienteClick",
+                                                    "designerId": "2ebbb14e-d8bf-4937-bc1c-ce4435232059"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.panel.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "id": "pnlVotos",
+                                        "layout": "fit",
+                                        "title": ""
+                                    },
+                                    "configAlternates": {
+                                        "id": "string",
+                                        "layout": "string",
+                                        "title": "string"
+                                    },
+                                    "name": "MyPanel6",
+                                    "designerId": "fc6378d3-5f44-4509-b552-ec1dc319e989",
+                                    "cn": [
+                                        {
+                                            "type": "viewcontrollereventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onPnlVotosRender",
+                                                "implHandler": [
+                                                    "var me = this;",
+                                                    "var indice = Ext.getCmp('dpIndice').getValue();",
+                                                    "Ext.getCmp('btnRegresar').setDisabled(true);",
+                                                    "Ext.getCmp('pnlPrincipal').setTitle(TIPOS.data[indice-1].descripcion);",
+                                                    "me.cargarCandidatos();"
+                                                ],
+                                                "name": "render",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onPnlVotosRender",
+                                            "designerId": "df67ced7-e29a-4d61-a2ef-3db594e073af"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "middle",
+                        "container|pack": "end",
+                        "height": 90,
+                        "html": "<left><img src=\"../servidor/img/tu-voz-dos.jpg\"></left>",
+                        "layout": "hbox",
+                        "layout|region": "north",
+                        "title": ""
+                    },
+                    "configAlternates": {
+                        "container|align": "string",
+                        "container|pack": "string",
+                        "height": "auto",
+                        "html": "string",
+                        "layout": "string",
+                        "layout|region": "string",
+                        "title": "string"
+                    },
+                    "name": "MyPanel8",
+                    "designerId": "a96ab2bb-e901-4528-85fa-7b1e69de5ef2",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconAlign": "right",
+                                "iconCls": "fa fa-power-off",
+                                "id": "btnSalirPrincipal",
+                                "margin": "0 10 0 0",
+                                "text": "Salir"
+                            },
+                            "configAlternates": {
+                                "iconAlign": "string",
+                                "iconCls": "string",
+                                "margin": "auto",
+                                "text": "string",
+                                "id": "string"
+                            },
+                            "name": "MyButton3",
+                            "designerId": "2cd26134-5c00-47ed-bd75-d82d9b456764",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onBtnSalirPrincipalClick",
+                                        "implHandler": [
+                                            "var viewMain = this;",
+                                            "viewMain.getView().destroy();",
+                                            "Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                                            "Ext.getCmp('displayusuario').setText('TRIBUNAL: '+NOMBRE);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onBtnSalirPrincipalClick",
+                                    "designerId": "0b3deff9-a1f8-4969-9a63-c194fbed36e3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.panel.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "bodyStyle": "background-color: #a7b8d3",
+                        "height": 150,
+                        "layout": "border",
+                        "layout|region": "south",
+                        "maxHeight": 45,
+                        "minHeight": 45
+                    },
+                    "configAlternates": {
+                        "bodyStyle": "string",
+                        "dock": "string",
+                        "maxHeight": "number",
+                        "minHeight": "number",
+                        "title": "string",
+                        "height": "auto",
+                        "layout": "string",
+                        "layout|region": "string"
+                    },
+                    "name": "MyPanel4",
+                    "designerId": "9b6190f3-6483-4d2e-970e-ee8a432a1549",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "id": "displayusuario2",
+                                "layout|region": "west",
+                                "margin": "7 0 15 20",
+                                "style": "color: white",
+                                "width": 350
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|region": "string",
+                                "margin": "auto",
+                                "style": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyDisplayField1",
+                            "designerId": "370ba134-4a95-4794-8ca5-26ca089c060a"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "",
+                                "id": "displayusuario3",
+                                "layout|region": "east",
+                                "margin": "7 20 15 0",
+                                "style": "color: white; text-transform:uppercase",
+                                "value": "",
+                                "width": 320
+                            },
+                            "configAlternates": {
+                                "fieldLabel": "string",
+                                "id": "string",
+                                "layout|region": "string",
+                                "margin": "auto",
+                                "style": "string",
+                                "value": "string",
+                                "width": "auto"
+                            },
+                            "name": "MyDisplayField2",
+                            "designerId": "0d333ac9-510c-44a4-ae8b-60c63c6c48b9"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "name": "voto",
+        "views": [
+            "vwprtAdministracion",
+            "vwprtPrincipal",
+            "vwprtLoginVotos",
+            "vwprtLogin"
+        ]
+    },
+    "configAlternates": {
+        "name": "string",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "//revisa si la sesion sigue inciada y si es asi carga las ventanas dependiendo de los roles",
+                    "Ext.Ajax.request(",
+                    "    {",
+                    "        url: '../servidor/login/sesiones',",
+                    "        method: 'post',",
+                    "        scope: this,",
+                    "        success: function(response, opts)",
+                    "        {",
+                    "            var responseData = Ext.JSON.decode(response.responseText);",
+                    "            if(responseData.success)",
+                    "            {",
+                    "                VERIFICADO = responseData.data.verified;",
+                    "",
+                    "",
+                    "                if(VERIFICADO){",
+                    "/*",
+                    "                    USUARIO = responseData.data.usuario_apps;",
+                    "                    ROl = responseData.data.rolAp_apps;",
+                    "                    NOMBRE = responseData.data.nombre_apps;",
+                    "",
+                    "                    if(ROl==='DELEG'){",
+                    "                        Ext.create('voto.view.vwprtLoginVotos', {renderTo: Ext.getBody()});",
+                    "                        Ext.getCmp('displayusuario3').setText(\"TRIBUNAL: \".concat(NOMBRE));",
+                    "                    }",
+                    "                    else if(ROl==='ADMIN'){",
+                    "                        Ext.create('voto.view.vwprtAdministracion', {renderTo: Ext.getBody()});",
+                    "                        Ext.getCmp('displayusuario').setText(NOMBRE);",
+                    "                    }else{",
+                    "                        Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                    "                    }",
+                    "                */}",
+                    "                else",
+                    "                {",
+                    "                    Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                    "                }",
+                    "",
+                    "            }else{",
+                    "                Ext.create('voto.view.vwprtLogin', {renderTo: Ext.getBody()});",
+                    "            }",
+                    "",
+                    "        },",
+                    "",
+                    "        failure: function(response, opts)",
+                    "        {",
+                    "            Ext.Msg.show({",
+                    "                title:'Error',",
+                    "                msg: 'Usuario o clave mal ingresados',",
+                    "                buttons: Ext.Msg.OK,",
+                    "                icon: Ext.MessageBox.WARNING",
+                    "            });",
+                    "        }",
+                    "    });",
+                    "//cambia update por actualizar y cancel por cancelar",
+                    "Ext.define(null, {",
+                    "    override: 'Ext.grid.RowEditor',",
+                    "    saveBtnText: 'Actualizar',",
+                    "    cancelBtnText: 'Cancelar'",
+                    "});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "c2d7f773-589a-474c-bb74-b382f839e906"
+        }
+    ]
+}

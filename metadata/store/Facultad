@@ -1,0 +1,108 @@
+{
+    "type": "arraystore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            "    {",
+            "        \"facultad\": \"Escuela de Bioanálisis\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Escuela de Trabajo Social\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Arquitectura, Diseño y Artes\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Ciencias Administrativas y Contables\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Ciencias de la Educación\"",
+            "    },",
+            "    {",
+            "        \"facultad\": \"Facultad de Ciencias Exactas y Naturales\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Ciencias Filosóficas y Teológicas\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Ciencias Humanas\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Comunicación, Lingüística y Literatura\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Economía\"",
+            "    },",
+            "    {",
+            "        \"facultad\": \"Facultad de Enfermería\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Ingeniería\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Jurisprudencia\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Medicina\"",
+            "    }, ",
+            "    {",
+            "        \"facultad\": \"Facultad de Psicología\"",
+            "    }",
+            "]"
+        ],
+        "designer|userClassName": "Facultad",
+        "storeId": "Facultad"
+    },
+    "configAlternates": {
+        "data": "array",
+        "designer|userClassName": "string",
+        "storeId": "string"
+    },
+    "name": "MyArrayStore",
+    "designerId": "5f953f57-7414-4b6b-87fa-6cb1a8367f77",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy1",
+            "designerId": "15e4456d-5cf2-4553-a7b2-e90791580c97",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader",
+                    "designerId": "56792e46-563c-491d-b898-756a2e9d1dfe"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "facultad"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString11",
+            "designerId": "3f9b2b25-cd6b-4153-81e0-4bb7b5d3c3b1"
+        }
+    ]
+}
